@@ -4,217 +4,235 @@ import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="POST MARS">
-	<main>
-		<div id="nav">
-			<Nav />
-		</div>
-		<div class="grid-container">
-			<div class="left-side">
-				<div class="logo-container">
-					<img src="/Post-Mors/logo.png" alt="Logo" class="logo" />
-				</div>
-			</div>
+  <main>
+    <div id="nav">
+      <Nav />
+    </div>
+    <div class="grid-container">
+      <div class="left-side">
+        <div class="leftSide-container">
+          <div class="logo-container">
+            <img src="/Post-Mors/logo.png" alt="Logo" class="logo" />
+          </div>
+          <div class="subtitle-container">
+            <p class="subtitle-text">
+              Espacio de innovación y diseño. Argentino. <span
+                >0 prejuicios.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
 
-			<div class="right-side">
-				<div class="box-container">
-					<div class="box">
-						<div class="box-content">
-							<h1 class="box-tittle">For Artists</h1>
-							<p class="box-text">
-								Construcción de Roll-Outs, artes de tapa,
-								visuales y estética para artistas argentinos.
-							</p>
-							<div class="buttons">
-								<button class="btn btn-portfolio"
-									>Ver portfolio</button
-								>
-								<button class="btn btn-presupuesto"
-									>Pedir presupuesto</button
-								>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="box-content">
-							<h1 class="box-tittle">Branding</h1>
-							<p class="box-text">
-								Construcción de sistema complejo de Diseño de
-								marca, rebrading o re-styling.
-							</p>
-							<div class="buttons">
-								<button class="btn btn-presupuesto"
-									>Pedir presupuesto</button
-								>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="box-content">
-							<h1 class="box-tittle">UX/UI</h1>
-							<p class="box-text">
-								Prototipado de app, web app o landing page para
-								tu emprendimiento o empresa.
-							</p>
-							<div class="buttons">
-								<button class="btn btn-portfolio"
-									>Ver portfolio</button
-								>
-								<button class="btn btn-presupuesto"
-									>Pedir presupuesto</button
-								>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<div class="box-content">
-							<h1 class="box-tittle">Merch</h1>
-							<p class="box-text">
-								Merchandising para artistas, empresas o emprendimientos.
-							</p>
-							<div class="buttons">
-								<button class="btn btn-portfolio"
-									>Ver portfolio</button
-								>
-								<button class="btn btn-presupuesto"
-									>Pedir presupuesto</button
-								>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+      <div class="right-side">
+        <div class="box-container">
+          <div class="box">
+            <div class="box-content">
+              <h1 class="box-tittle">For Artists</h1>
+              <p class="box-text">
+                Construcción de Roll-Outs, artes de tapa, visuales y estética
+                para artistas argentinos.
+              </p>
+              <div class="buttons">
+                <button class="btn btn-portfolio">Ver portfolio</button>
+                <button class="btn btn-presupuesto">Pedir presupuesto</button>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-content">
+              <h1 class="box-tittle">Branding</h1>
+              <p class="box-text">
+                Construcción de sistema complejo de Diseño de marca, rebrading o
+                re-styling.
+              </p>
+              <div class="buttons">
+                <button class="btn btn-presupuesto">Pedir presupuesto</button>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-content">
+              <h1 class="box-tittle">UX/UI</h1>
+              <p class="box-text">
+                Prototipado de app, web app o landing page para tu
+                emprendimiento o empresa.
+              </p>
+              <div class="buttons">
+                <button class="btn btn-portfolio">Ver portfolio</button>
+                <button class="btn btn-presupuesto">Pedir presupuesto</button>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-content">
+              <h1 class="box-tittle">Merch</h1>
+              <p class="box-text">
+                Merchandising para artistas, empresas o emprendimientos.
+              </p>
+              <div class="buttons">
+                <button class="btn btn-portfolio">Ver portfolio</button>
+                <button class="btn btn-presupuesto">Pedir presupuesto</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
-	/* Estilos generales */
+  /* Estilos generales */
 
-	body,
-	html,
-	main {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		background-image: url("/Post-Mors/background.gif");
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
+  body,
+  html,
+  main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/Post-Mors/background.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-	main {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		position: relative;
-		text-align: center;
-	}
-	.logo {
-		width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-		margin-right: 10vw; /* Cambiar a vw para que se ajuste al tamaño de la pantalla */
-	}
+  main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+  }
+  .logo {
+    width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+  }
 
-	#nav {
-		display: flex;
-		position: relative;
-		align-items: center;
-		justify-content: center;
-		padding: 20px; /* Espacio alrededor del contenido */
-	}
+  #nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Espacio alrededor del contenido */
+  }
 
-	.grid-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
-		gap: 20px; /* Espacio entre las columnas */
-		margin: 0 auto; /* Centrar el contenedor horizontalmente */
-		max-width: 1200px; /* Ancho máximo del contenedor */
-		padding: 20px; /* Espacio alrededor del contenido */
-	}
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
+    margin: 0 20%; /* Centrar el contenedor horizontalmente */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    padding: 20px; /* Espacio alrededor del contenido */
+  }
 
-	.left-side {
-		grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
-	}
+  .left-side {
+    grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
+	margin-top: 5%;
+  }
 
-	.right-side {
-		grid-column: 2; /* Asigna la columna 2 al lado derecho */
-	}
+  .right-side {
+    grid-column: 2; /* Asigna la columna 2 al lado derecho */
+  }
 
-	.box-container {
-		display: block;
-		align-items: center;
-		justify-self: center;
-		margin-left: 15%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-		overflow-y: auto; /* Hace que el contenido sea desplazable */
-		max-height: calc(80vh); /* Resta 50px del 100vh */
-		scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
-		-ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
-	}
+  .box-container {
+    display: block;
+    align-items: center;
+    justify-self: center;
+    margin-left: 5%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+    overflow-y: auto; /* Hace que el contenido sea desplazable */
+    max-height: calc(80vh); /* Resta 50px del 100vh */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
+  }
 
-	.box-container::-webkit-scrollbar {
-		display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
-	}
+  .box-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
+  }
 
-	.box {
-		border-radius: 29px;
-		border: 1px solid #fff;
-		width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-		margin-bottom: 10%;
-		transition:
-			background-color 0.3s ease,
-			color 0.3s ease; /* Añade una transición suave */
-	}
+  .box {
+    border-radius: 29px;
+    border: 1px solid #fff;
+    width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+    margin-bottom: 10%;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease; /* Añade una transición suave */
+  }
 
-	.box:hover {
-		background-color: white;
-		color: black;
-	}
-	.box:hover .box-text,
-	.box:hover .box-tittle,
-	.box:hover .btn {
-		color: black; /* Cambia el color del texto a negro cuando el mouse está encima de .box */
-	}
+  .box:hover {
+    background-color: white;
+    color: black;
+  }
+  .box:hover .box-text,
+  .box:hover .box-tittle,
+  .box:hover .btn {
+    color: black; /* Cambia el color del texto a negro cuando el mouse está encima de .box */
+  }
 
-	.box:hover .btn {
-		border: 1px solid black;
-	}
+  .box:hover .btn {
+    border: 1px solid black;
+  }
 
-	.box-content {
-		padding: 20px;
-	}
+  .box-content {
+    padding: 20px;
+  }
 
-	.box-text {
-		color: #fff;
-		font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-		text-align: left;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
-	}
+  .box-text {
+    color: #fff;
+    font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 
-	.box-tittle {
-		color: #fff;
-		font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-		font-weight: 700;
-		line-height: normal;
-		text-align: left;
-	}
+  .box-tittle {
+    color: #fff;
+    font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+  }
 
-	.buttons {
-		display: flex;
-		text-align: left;
-		gap: 10px;
-	}
+  .buttons {
+    display: flex;
+    text-align: left;
+    gap: 10px;
+  }
 
-	.btn {
-		padding: 8px 23px;
-		border-radius: 25px;
-		border: 1px solid #fff;
-		background-color: transparent;
-		color: white;
-		font-family: "Apfel Grotezk";
-		font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-	}
+  .btn {
+    padding: 8px 23px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: white;
+    font-family: "Apfel Grotezk";
+    font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .subtitle-container {
+    display: flex;
+    width: 636px;
+    align-items: left;
+    justify-content: left;
+  }
+  .subtitle-text {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+  }
+  .subtitle-text span {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 </style>
