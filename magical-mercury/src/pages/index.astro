@@ -5,9 +5,6 @@ import Nav from "../components/Nav.astro";
 
 <Layout title="Post Mors">
 	<main>
-		<video autoplay muted loop id="myVideo">
-			<source src="/Post-Mors/Background.mp4" type="video/mp4" />
-		</video>
 		<div id="nav">
 			<Nav />
 		</div>
@@ -72,142 +69,136 @@ import Nav from "../components/Nav.astro";
 			</div>
 		</div>
 	</main>
-
-	<style>
-		/* Estilos generales */
-
-		body,
-		html {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-		}
-
-		main {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			position: relative;
-			text-align: center;
-		}
-
-		#myVideo {
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			min-width: 100%;
-			min-height: 100%;
-			object-fit: cover;
-			z-index: -1;
-		}
-
-		.logo {
-			width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-			margin-right: 10vw; /* Cambiar a vw para que se ajuste al tamaño de la pantalla */
-		}
-
-		#nav {
-			display: flex;
-			position: relative;
-			align-items: center;
-			justify-content: center;
-			padding: 20px; /* Espacio alrededor del contenido */
-		}
-
-		.grid-container {
-			display: grid;
-			grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
-			gap: 20px; /* Espacio entre las columnas */
-			margin: 0 auto; /* Centrar el contenedor horizontalmente */
-			max-width: 1200px; /* Ancho máximo del contenedor */
-			padding: 20px; /* Espacio alrededor del contenido */
-		}
-
-		.left-side {
-			grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
-		}
-
-		.right-side {
-			grid-column: 2; /* Asigna la columna 2 al lado derecho */
-		}
-
-		.box-container {
-			display: block;
-			align-items: center;
-			justify-self: center;
-			margin-left: 15%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-			overflow-y: auto; /* Hace que el contenido sea desplazable */
-			max-height: calc(80vh); /* Resta 50px del 100vh */
-			scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
-			-ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
-		}
-
-		.box-container::-webkit-scrollbar {
-			display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
-		}
-
-		.box {
-			border-radius: 29px;
-			border: 1px solid #fff;
-			width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-			margin-bottom: 10%;
-			transition:
-				background-color 0.3s ease,
-				color 0.3s ease; /* Añade una transición suave */
-		}
-
-		.box:hover {
-			background-color: white;
-			color: black;
-		}
-		.box:hover .box-text,
-		.box:hover .box-tittle,
-		.box:hover .btn {
-			color: black; /* Cambia el color del texto a negro cuando el mouse está encima de .box */
-		}
-
-		.box:hover .btn {
-			border: 1px solid black;
-		}
-
-		.box-content {
-			padding: 20px;
-		}
-
-		.box-text {
-			color: #fff;
-			font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-			text-align: left;
-			font-style: normal;
-			font-weight: 500;
-			line-height: normal;
-		}
-
-		.box-tittle {
-			color: #fff;
-			font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-			font-weight: 700;
-			line-height: normal;
-			text-align: left;
-		}
-
-		.buttons {
-			display: flex;
-			text-align: left;
-			gap: 10px;
-		}
-
-		.btn {
-			padding: 8px 23px;
-			border-radius: 25px;
-			border: 1px solid #fff;
-			background-color: transparent;
-			color: white;
-			font-family: "Apfel Grotezk";
-			font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-		}
-	</style>
 </Layout>
+
+<style>
+	/* Estilos generales */
+
+	body,
+	html,
+	main {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-image: url("/Post-Mors/Background.gif");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	main {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		text-align: center;
+	}
+	.logo {
+		width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+		margin-right: 10vw; /* Cambiar a vw para que se ajuste al tamaño de la pantalla */
+	}
+
+	#nav {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		padding: 20px; /* Espacio alrededor del contenido */
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
+		gap: 20px; /* Espacio entre las columnas */
+		margin: 0 auto; /* Centrar el contenedor horizontalmente */
+		max-width: 1200px; /* Ancho máximo del contenedor */
+		padding: 20px; /* Espacio alrededor del contenido */
+	}
+
+	.left-side {
+		grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
+	}
+
+	.right-side {
+		grid-column: 2; /* Asigna la columna 2 al lado derecho */
+	}
+
+	.box-container {
+		display: block;
+		align-items: center;
+		justify-self: center;
+		margin-left: 15%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+		overflow-y: auto; /* Hace que el contenido sea desplazable */
+		max-height: calc(80vh); /* Resta 50px del 100vh */
+		scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
+		-ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
+	}
+
+	.box-container::-webkit-scrollbar {
+		display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
+	}
+
+	.box {
+		border-radius: 29px;
+		border: 1px solid #fff;
+		width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+		margin-bottom: 10%;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease; /* Añade una transición suave */
+	}
+
+	.box:hover {
+		background-color: white;
+		color: black;
+	}
+	.box:hover .box-text,
+	.box:hover .box-tittle,
+	.box:hover .btn {
+		color: black; /* Cambia el color del texto a negro cuando el mouse está encima de .box */
+	}
+
+	.box:hover .btn {
+		border: 1px solid black;
+	}
+
+	.box-content {
+		padding: 20px;
+	}
+
+	.box-text {
+		color: #fff;
+		font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+		text-align: left;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.box-tittle {
+		color: #fff;
+		font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+		font-weight: 700;
+		line-height: normal;
+		text-align: left;
+	}
+
+	.buttons {
+		display: flex;
+		text-align: left;
+		gap: 10px;
+	}
+
+	.btn {
+		padding: 8px 23px;
+		border-radius: 25px;
+		border: 1px solid #fff;
+		background-color: transparent;
+		color: white;
+		font-family: "Apfel Grotezk";
+		font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+</style>
