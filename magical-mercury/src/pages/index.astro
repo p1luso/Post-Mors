@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<video autoplay muted loop id="myVideo">
+			<source src="../public/Background.mp4" type="video/mp4" />
+		</video>
+		<div id="nav">
+			<Nav />
+		</div>
+		<div class="grid-container">
+			<div class="left-side">
+				<div class="logo-container">
+					<img src="../public/logo.png" alt="Logo" class="logo" />
+				</div>
+			</div>
+
+			<div class="right-side">
+				<div class="box-container">
+					<div class="box">
+						<div class="box-content">
+							<h1 class="box-tittle">For Artists</h1>
+							<p class="box-text">
+								Construcción de Roll-Outs, artes de tapa,
+								visuales y estética para artistas argentinos.
+							</p>
+							<div class="buttons">
+								<button class="btn btn-portfolio"
+									>Ver portfolio</button
+								>
+								<button class="btn btn-presupuesto"
+									>Pedir presupuesto</button
+								>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="box-content">
+							<h1 class="box-tittle">Branding</h1>
+							<p class="box-text">
+								Construcción de sistema complejo de Diseño de
+								marca, rebrading o re-styling.
+							</p>
+							<div class="buttons">
+								<button class="btn btn-presupuesto"
+									>Pedir presupuesto</button
+								>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="box-content">
+							<h1 class="box-tittle">UX/UI</h1>
+							<p class="box-text">
+								Prototipado de app, web app o landing page para
+								tu emprendimiento o empresa.
+							</p>
+							<div class="buttons">
+								<button class="btn btn-portfolio"
+									>Ver portfolio</button
+								>
+								<button class="btn btn-presupuesto"
+									>Pedir presupuesto</button
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<style>
+		body,
+		html {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		main {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+		}
+		#myVideo {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
+		.logo {
+			width: 50%;
+			margin-right: 25vh;
+		}
+		#nav {
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			padding: 20px; /* Espacio alrededor del contenido */
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
+			gap: 20px; /* Espacio entre las columnas */
+			margin: 0 auto; /* Centrar el contenedor horizontalmente */
+			max-width: 1200px; /* Ancho máximo del contenedor */
+			padding: 20px; /* Espacio alrededor del contenido */
+		}
+
+		.left-side {
+			grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
+		}
+
+		.right-side {
+			grid-column: 2; /* Asigna la columna 2 al lado derecho */
+		}
+
+		.box-container {
+        display: block;
+        align-items: center;
+        justify-self: center;
+        margin-left: 15%;
+        overflow-y: auto; /* Hace que el contenido sea desplazable */
+        max-height: calc(80vh); /* Resta 50px del 100vh */
+        scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
+        -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
+    }
+
+    .box-container::-webkit-scrollbar {
+        display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
+    }
+		.box {
+			border-radius: 29px;
+			border: 1px solid #fff;
+			width: 90%px;
+			height: 277px;
+			margin-bottom: 10%;
+		}
+
+		.box-content {
+			padding: 20px;
+		}
+		.box-text {
+			color: #fff;
+			font-size: 28.602px;
+			text-align: left;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+		}
+		.box-tittle {
+			color: #fff;
+			font-size: 28.602px;
+			font-weight: 700;
+			line-height: normal;
+			line-height: normal;
+			text-align: left;
+		}
+		.buttons {
+			display: flex;
+			text-align: left;
+			gap: 10px;
+		}
+		.btn {
+			padding: 8px 23px;
+			border-radius: 25px;
+			border: 1px solid #fff;
+			background-color: transparent;
+			color: white;
+			font-family: "Apfel Grotezk";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
+	</style>
+</Layout>

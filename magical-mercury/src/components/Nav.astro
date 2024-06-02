@@ -1,0 +1,98 @@
+---
+console.log("Javascript");
+---
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <ul class="navbar-navigation">
+            <a class="navbar-hip" href="/" id="inicio">
+                <li class="navbar-list">Inicio</li>
+            </a>
+            <a class="navbar-hip" href="/for-artists" id="for-artists">
+                <li class="navbar-list">For artists</li>
+            </a>
+            <a class="navbar-hip" href="/branding" id="branding">
+                <li class="navbar-list">Branding</li>
+            </a>
+            <a class="navbar-hip" href="/ux/ui" id="ux-ui">
+                <li class="navbar-list">UX/UI</li>
+            </a>
+            <a class="navbar-hip" href="/merch" id="merch">
+                <li class="navbar-list">Merch</li>
+            </a>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        display: inline-flex; /* Ajuste el contenido al tamaño del contenido interior */
+        border-radius: 10px;
+        background: #4d4d4d;
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-navigation {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-list {
+        margin: 0 20px;
+        font-size: 20px;
+        font-family: "Apfel Grotezk";
+    }
+
+    .navbar-hip {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+    .navbar-hip.active {
+    color: black;
+    background: #fff;
+    border-radius: 10px;
+}
+
+    
+    .navbar-list.active .navbar-hip {
+        color: black;
+        background: #fff;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    console.log("Javascript");
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navbar-hip');
+        let activeLink: HTMLElement | null = null;
+
+        navLinks.forEach((link: Element) => {
+            const htmlLink = link as HTMLElement;
+            if (htmlLink.getAttribute('href') === currentPath) {
+                htmlLink.classList.add('active');
+                activeLink = htmlLink;
+            }
+
+            htmlLink.addEventListener('click', () => {
+                if (activeLink) activeLink.classList.remove('active');
+                htmlLink.classList.add('active');
+                activeLink = htmlLink;
+            });
+        });
+    });
+</script>
