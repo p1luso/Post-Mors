@@ -21,6 +21,15 @@ import Nav from "../components/Nav.astro";
               >
             </p>
           </div>
+          <div class="ls-buttons">
+            <button class="btn btn-ls">8-MANIFESTO</button>
+            <button class="btn btn-ls">¿Quiénes somos?</button>
+            <button class="btn btn-ls">Instagram</button>
+            <button class="btn btn-ls">LinkedIn</button>
+            <button class="btn btn-ls">Behance</button>
+            <button class="btn btn-ls">Contacto</button>
+          </div>
+
         </div>
       </div>
 
@@ -126,7 +135,7 @@ import Nav from "../components/Nav.astro";
 
   .left-side {
     grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
-	margin-top: 5%;
+    margin-top: 5%;
   }
 
   .right-side {
@@ -172,6 +181,16 @@ import Nav from "../components/Nav.astro";
     border: 1px solid black;
   }
 
+  .box:hover .btn:hover{
+	transition:
+      background-color 0.3s ease,
+      color 0.3s ease; /* Añade una transición suave */
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+
+  }
+
   .box-content {
     padding: 20px;
   }
@@ -195,21 +214,7 @@ import Nav from "../components/Nav.astro";
 
   .buttons {
     display: flex;
-    text-align: left;
     gap: 10px;
-  }
-
-  .btn {
-    padding: 8px 23px;
-    border-radius: 25px;
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: white;
-    font-family: "Apfel Grotezk";
-    font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 
   .subtitle-container {
@@ -235,4 +240,20 @@ import Nav from "../components/Nav.astro";
     font-weight: 700;
     line-height: normal;
   }
+
+  .btn-ls {
+    margin: 1% 0.5%;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .btn:hover {
+    background-color: white;
+    color: black;
+  }
+
 </style>
