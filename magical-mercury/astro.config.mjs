@@ -6,7 +6,7 @@ export default defineConfig({
     server: {
         // Configurar Astro para servir recursos estáticos desde la carpeta 'assets'
         static: {
-          '/Post-Mors': './public' // Ruta de acceso a la carpeta de recursos estáticos
+          '/': './public' // Ruta de acceso a la carpeta de recursos estáticos
         }
     }
 
