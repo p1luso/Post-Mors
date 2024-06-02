@@ -74,12 +74,15 @@ import Nav from "../components/Nav.astro";
 	</main>
 
 	<style>
+		/* Estilos generales */
+
 		body,
 		html {
 			height: 100%;
 			margin: 0;
 			padding: 0;
 		}
+
 		main {
 			height: 100%;
 			margin: 0;
@@ -87,6 +90,7 @@ import Nav from "../components/Nav.astro";
 			position: relative;
 			text-align: center;
 		}
+
 		#myVideo {
 			position: absolute;
 			right: 0;
@@ -96,10 +100,12 @@ import Nav from "../components/Nav.astro";
 			object-fit: cover;
 			z-index: -1;
 		}
+
 		.logo {
-			width: 50%;
-			margin-right: 25vh;
+			width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+			margin-right: 10vw; /* Cambiar a vw para que se ajuste al tamaño de la pantalla */
 		}
+
 		#nav {
 			display: flex;
 			position: relative;
@@ -126,51 +132,71 @@ import Nav from "../components/Nav.astro";
 		}
 
 		.box-container {
-        display: block;
-        align-items: center;
-        justify-self: center;
-        margin-left: 15%;
-        overflow-y: auto; /* Hace que el contenido sea desplazable */
-        max-height: calc(80vh); /* Resta 50px del 100vh */
-        scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
-        -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
-    }
+			display: block;
+			align-items: center;
+			justify-self: center;
+			margin-left: 15%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+			overflow-y: auto; /* Hace que el contenido sea desplazable */
+			max-height: calc(80vh); /* Resta 50px del 100vh */
+			scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
+			-ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
+		}
 
-    .box-container::-webkit-scrollbar {
-        display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
-    }
+		.box-container::-webkit-scrollbar {
+			display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Edge */
+		}
+
 		.box {
 			border-radius: 29px;
 			border: 1px solid #fff;
-			width: 90%px;
-			height: 277px;
+			width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
 			margin-bottom: 10%;
+			transition:
+				background-color 0.3s ease,
+				color 0.3s ease; /* Añade una transición suave */
+		}
+
+		.box:hover {
+			background-color: white;
+			color: black;
+		}
+		.box:hover .box-text,
+		.box:hover .box-tittle,
+		.box:hover .btn {
+			color: black; /* Cambia el color del texto a negro cuando el mouse está encima de .box */
+		}
+
+		.box:hover .btn {
+			border: 1px solid black;
 		}
 
 		.box-content {
 			padding: 20px;
 		}
+
 		.box-text {
 			color: #fff;
-			font-size: 28.602px;
+			font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
 			text-align: left;
 			font-style: normal;
 			font-weight: 500;
 			line-height: normal;
 		}
+
 		.box-tittle {
 			color: #fff;
-			font-size: 28.602px;
+			font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
 			font-weight: 700;
-			line-height: normal;
 			line-height: normal;
 			text-align: left;
 		}
+
 		.buttons {
 			display: flex;
 			text-align: left;
 			gap: 10px;
 		}
+
 		.btn {
 			padding: 8px 23px;
 			border-radius: 25px;
@@ -178,7 +204,7 @@ import Nav from "../components/Nav.astro";
 			background-color: transparent;
 			color: white;
 			font-family: "Apfel Grotezk";
-			font-size: 16px;
+			font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
