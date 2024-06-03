@@ -16,7 +16,7 @@ import Nav from "../components/Nav.astro";
           </div>
           <div class="subtitle-container">
             <p class="subtitle-text">
-              Espacio de innovación y diseño. Argentino. <span
+              Espacio de innovación y diseño. Argentino. <br /><span
                 >0 prejuicios.</span
               >
             </p>
@@ -27,9 +27,38 @@ import Nav from "../components/Nav.astro";
             <button class="btn btn-ls">Instagram</button>
             <button class="btn btn-ls">LinkedIn</button>
             <button class="btn btn-ls">Behance</button>
-            <button class="btn btn-ls">Contacto</button>
+            <button class="btn btn-ls" id="contact-btn">Contacto</button>
           </div>
-
+          <div class="form-container hidden" id="contact-form-container">
+            <!-- Campos del formulario -->
+            <p class="form-text">¡Contáctate con nosotros!</p>
+            <div class="form-group">
+              <form method="POST" action="mail.php">
+                <div class="up-form-group">
+                  <input
+                    class="up-text"
+                    type="text"
+                    id="up-text1"
+                    name="up-text1"
+                    placeholder="Nombre"
+                  />
+                  <input
+                    class="up-text"
+                    type="text"
+                    id="up-text2"
+                    name="up-text2"
+                    placeholder="Email"
+                  />
+                </div>
+                <textarea
+                  id="textarea"
+                  name="textarea"
+                  placeholder="Contanos que necesitas..."></textarea>
+                <input type="submit" value="Enviar Mensaje" id="mail-button" />
+              </form>
+            </div>
+            <!-- Otros campos del formulario -->
+          </div>
         </div>
       </div>
 
@@ -116,6 +145,9 @@ import Nav from "../components/Nav.astro";
   .logo {
     width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
   }
+  .logo-container {
+    margin-bottom: -3%;
+  }
 
   #nav {
     display: flex;
@@ -135,7 +167,7 @@ import Nav from "../components/Nav.astro";
 
   .left-side {
     grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
-    margin-top: 5%;
+    margin-top: 3%;
   }
 
   .right-side {
@@ -161,7 +193,7 @@ import Nav from "../components/Nav.astro";
     border-radius: 29px;
     border: 1px solid #fff;
     width: 95%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     transition:
       background-color 0.3s ease,
       color 0.3s ease; /* Añade una transición suave */
@@ -181,14 +213,13 @@ import Nav from "../components/Nav.astro";
     border: 1px solid black;
   }
 
-  .box:hover .btn:hover{
-	transition:
+  .box:hover .btn:hover {
+    transition:
       background-color 0.3s ease,
       color 0.3s ease; /* Añade una transición suave */
-	background-color: black;
-	color: white;
-	border: 1px solid white;
-
+    background-color: black;
+    color: white;
+    border: 1px solid white;
   }
 
   .box-content {
@@ -200,7 +231,7 @@ import Nav from "../components/Nav.astro";
     font-size: 1.5rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
     text-align: left;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 900;
     line-height: normal;
   }
 
@@ -241,6 +272,14 @@ import Nav from "../components/Nav.astro";
     line-height: normal;
   }
 
+  .ls-buttons {
+    display: block;
+    align-items: left;
+    justify-content: left;
+    width: 90%;
+    margin-top: -4%;
+  }
+
   .btn-ls {
     margin: 1% 0.5%;
     color: #fff;
@@ -256,4 +295,102 @@ import Nav from "../components/Nav.astro";
     color: black;
   }
 
+  .form-group {
+    display: block;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 93%;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+  }
+  .form-text {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .form-container.show {
+    display: block;
+  }
+
+  .form-group .up-text {
+    width: 41%;
+    height: 54px;
+    font-family: "Apfel Grotezk";
+    margin-right: 1%;
+    padding-left: 5%;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+  }
+
+  .form-group textarea {
+    width: 90%;
+    font-family: "Apfel Grotezk";
+    height: 123px;
+    padding-left: 5%;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+  }
+  .form-group input,
+  .form-group textarea {
+    margin-bottom: 2%;
+  }
+
+  textarea {
+    padding-top: 5%;
+  }
+
+  #mail-button {
+    padding: 8px 23px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    background-color: white;
+    color: #000;
+    font-family: "Apfel Grotezk";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #fff;
+  }
 </style>
+
+<script>
+  const contactBtn = document.getElementById("contact-btn");
+  const contactFormContainer = document.getElementById(
+    "contact-form-container"
+  );
+
+  if (contactBtn) {
+    contactBtn.addEventListener("click", () => {
+      if (contactFormContainer) {
+        contactFormContainer.style.display = "block";
+      }
+    });
+  }
+  if (contactFormContainer) {
+    contactFormContainer.style.display = "block";
+  }
+</script>
