@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="" href="" />
+		<link rel="icon" type="image/svg" href="./public/icon.svg">	
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -21,8 +21,29 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-		font-family: "Apfel Grotezk";
+	@font-face {
+		font-family: "Apfel Grotezk Brukt";
+		src: url(/magical-mercury/public/web/ApfelGrotezk-Brukt.woff2)
+		format('woff');
+	}
+	@font-face {
+		font-family: "Apfel Grotezk Fett";
+		src: url(/magical-mercury/public/web/ApfelGrotezk-Fett.woff2)
+		format('woff');
+	}@font-face {
+		font-family: "Apfel Grotezk Mittel";
+		src: url(/magical-mercury/public/web/ApfelGrotezk-Mittel.woff2)
+		format('woff');
+	}
+	@font-face {
+		font-family: "Apfel Grotezk Regular";
+		src: url(/magical-mercury/public/web/ApfelGrotezk-Regular.woff2)
+		format('woff');
+	}
+	@font-face {
+		font-family: "Apfel Grotezk Satt";
+		src: url(/magical-mercury/public/web/ApfelGrotezk-Satt.woff2)
+		format('woff');
 	}
 	.btn {
     padding: 8px 23px;
@@ -30,7 +51,7 @@ const { title } = Astro.props;
     border: 1px solid #fff;
     background-color: transparent;
     color: white;
-    font-family: "Apfel Grotezk";
+    font-family: "Apfel Grotezk Regular";
     font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
     font-style: normal;
     font-weight: 400;
