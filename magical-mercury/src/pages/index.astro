@@ -33,7 +33,7 @@ import Nav from "../components/Nav.astro";
             <!-- Campos del formulario -->
             <p class="form-text">¡Contáctate con nosotros!</p>
             <div class="form-group">
-              <form >
+              <form>
                 <div class="up-form-group">
                   <input
                     class="up-text"
@@ -129,29 +129,29 @@ import Nav from "../components/Nav.astro";
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(#262525, #48560F); /* Fondo degradado */
+    background: linear-gradient(#262525, #48560f); /* Fondo degradado */
     background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
-    animation: gradient 5s ease infinite; /* Aplica la animación */   
+    animation: gradient 5s ease infinite; /* Aplica la animación */
   }
-.grid-container {
+  .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
     margin: 0 5vw; /* Centrar el contenedor horizontalmente */
     max-width: 80vw; /* Ancho máximo del contenedor */
     padding: 2vw; /* Espacio alrededor del contenido */
-}
+  }
 
-@keyframes gradient {
+  @keyframes gradient {
     0% {
-        background-position: 0% 0%;
+      background-position: 0% 0%;
     }
     50% {
-        background-position: 0% 100%;
+      background-position: 0% 100%;
     }
     100% {
-        background-position: 0% 0%;
+      background-position: 0% 0%;
     }
-}
+  }
   main {
     height: 100%;
     margin: 0;
@@ -250,7 +250,7 @@ import Nav from "../components/Nav.astro";
     font-size: 28.602px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal; 
+    line-height: normal;
   }
 
   .box-tittle {
@@ -259,7 +259,7 @@ import Nav from "../components/Nav.astro";
     font-size: 28.602px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal; 
+    line-height: normal;
   }
 
   .buttons {
@@ -392,14 +392,12 @@ import Nav from "../components/Nav.astro";
   textarea::placeholder {
     color: #fff;
   }
-
 </style>
-
 
 <script>
   const contactBtn = document.getElementById("contact-btn");
   const contactFormContainer = document.getElementById(
-    "contact-form-container"
+    "contact-form-container",
   );
 
   if (contactBtn) {

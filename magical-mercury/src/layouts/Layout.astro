@@ -12,8 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg" href="/Post-Mors/icon.svg">	
-		<link rel="stylesheet" href="Post-Mors/_astro/index.L01Dqpd-.css">
+		<link rel="icon" type="image/svg" href="/Post-Mors/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -24,39 +23,35 @@ const { title } = Astro.props;
 <style is:global>
 	@font-face {
 		font-family: "Apfel Grotezk Brukt";
-		src: url(/Post-Mors/ApfelGrotezk-Brukt.woff2)
-		format('woff');
+		src: url(/Post-Mors/ApfelGrotezk-Brukt.woff2) format("woff");
 	}
 	@font-face {
 		font-family: "ApfelGrotezkFett";
-		src: url(/Post-Mors/ApfelGrotezk-Fett.woff2)
-		format('woff');
-	}@font-face {
+		src: url(/Post-Mors/ApfelGrotezk-Fett.woff2) format("woff");
+	}
+	@font-face {
 		font-family: "ApfelGrotezkMittel";
-		src: url(/Post-Mors/ApfelGrotezk-Mittel.woff2)
-		format('woff');
+		src: url(/Post-Mors/ApfelGrotezk-Mittel.woff2) format("woff");
 	}
 	@font-face {
 		font-family: "ApfelGrotezkRegular";
-		src: url(/Post-Mors/ApfelGrotezk-Regular.woff2)
-		format('woff');
+		src: url(/Post-Mors/ApfelGrotezk-Regular.woff2) format("woff");
 	}
 	@font-face {
 		font-family: "ApfelGrotezkSatt";
-		src: url(/Post-Mors/ApfelGrotezk-Satt.woff2)
-		format('woff');
+		src: url(/Post-Mors/ApfelGrotezk-Satt.woff2) format("woff");
 	}
 
 	.btn {
-    padding: 8px 23px;
-    border-radius: 25px;
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: white;
-    font-family: "ApfelGrotezkMittel";
-    font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+		padding: 8px 23px;
+		border-radius: 25px;
+		border: 1px solid #fff;
+		background-color: transparent;
+		color: white;
+		font-family: "ApfelGrotezkMittel";
+		font-size: 1rem; /* Cambiar a rem para que se ajuste al tamaño de la fuente */
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
 </style>
