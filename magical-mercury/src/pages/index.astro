@@ -407,15 +407,12 @@ import Nav from "../components/Nav.astro";
     background: linear-gradient(#262525, #48560f); /* Fondo degradado */
     background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
     animation: gradient 5s ease infinite; /* Aplica la animación */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display:grid;
   }
 
   .grid-container {
     display: flex;
-    flex-direction: column-reverse; /* Cambia a columna inversa en pantallas medianas */
+    flex-direction: column; /* Cambia a columna inversa en pantallas medianas */
     align-items: center;
     margin: 0 10vw; /* Ajustar margen */
     max-width: 80vw; /* Ancho máximo del contenedor */
