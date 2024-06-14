@@ -132,13 +132,15 @@ import Nav from "../components/Nav.astro";
     background: linear-gradient(#262525, #48560f); /* Fondo degradado */
     background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
     animation: gradient 5s ease infinite; /* Aplica la animación */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
+  
   .grid-container {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
-    margin: 0 5vw; /* Centrar el contenedor horizontalmente */
-    max-width: 80vw; /* Ancho máximo del contenedor */
-    padding: 2vw; /* Espacio alrededor del contenido */
+    justify-content: center;
   }
 
   @keyframes gradient {
@@ -152,6 +154,7 @@ import Nav from "../components/Nav.astro";
       background-position: 0% 0%;
     }
   }
+
   main {
     height: 100%;
     margin: 0;
@@ -159,6 +162,7 @@ import Nav from "../components/Nav.astro";
     position: relative;
     align-items: center;
   }
+
   .logo {
     width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
   }
@@ -391,6 +395,88 @@ import Nav from "../components/Nav.astro";
   input::placeholder,
   textarea::placeholder {
     color: #fff;
+  }
+
+  @media only screen and (max-width: 968px) {
+  body,
+  html,
+  main {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#262525, #48560f); /* Fondo degradado */
+    background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
+    animation: gradient 5s ease infinite; /* Aplica la animación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column-reverse; /* Cambia a columna inversa en pantallas medianas */
+    align-items: center;
+    margin: 0 10vw; /* Ajustar margen */
+    max-width: 80vw; /* Ancho máximo del contenedor */
+    padding: 2vw; /* Espacio alrededor del contenido */
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%; /* Asegurar que cada lado ocupe todo el ancho */
+    padding-bottom: 5%;
+  }
+
+  .logo {
+    width: 60%; /* Ajustar tamaño del logo */
+  }
+
+  .subtitle-text {
+    font-size: 40px; /* Reducir tamaño de fuente */
+  }
+
+  .btn-ls {
+    font-size: 14px; /* Ajustar tamaño de fuente de los botones */
+  }
+
+  .box-content {
+    padding: 15px; /* Ajustar padding */
+  }
+
+  .box-text,
+  .box-tittle {
+    font-size: 24px; /* Ajustar tamaño de fuente */
+  }
+}
+
+  /* Estilos para pantallas pequeñas (móviles) */
+  @media only screen and (max-width: 480px) {
+    .grid-container {
+      margin: 0 3vw; /* Reducir el margen en pantallas pequeñas */
+      padding: 1.5vw; /* Reducir el padding en pantallas pequeñas */
+    }
+
+    .logo {
+      width: 80%; /* Ajustar tamaño del logo */
+    }
+
+    .subtitle-text {
+      font-size: 30px; /* Reducir tamaño de fuente */
+    }
+
+    .btn-ls {
+      font-size: 12px; /* Ajustar tamaño de fuente de los botones */
+    }
+
+    .box-content {
+      padding: 10px; /* Ajustar padding */
+    }
+
+    .box-text,
+    .box-tittle {
+      font-size: 20px; /* Ajustar tamaño de fuente */
+    }
   }
 </style>
 
