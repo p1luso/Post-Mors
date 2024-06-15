@@ -1,7 +1,6 @@
 ---
 console.log("Javascript");
 ---
-
 <nav class="navbar">
     <div class="navbar-brand">
         <ul class="navbar-navigation">
@@ -29,32 +28,22 @@ console.log("Javascript");
             <div class="bar"></div>
         </div>
         <div class="dropdown-menu" id="dropdown-menu">
-            <a href="/Post-Mors/" class="dropdown-link" id="dropdown-inicio"
-                >Inicio</a
-            >
-            <a
-                href="/for-artists"
-                class="dropdown-link"
-                id="dropdown-for-artists">For Artists</a
-            >
-            <a href="/branding" class="dropdown-link" id="dropdown-branding"
-                >Branding</a
-            >
+            <a href="/Post-Mors/" class="dropdown-link" id="dropdown-inicio">Inicio</a>
+            <a href="/for-artists" class="dropdown-link" id="dropdown-for-artists">For Artists</a>
+            <a href="/branding" class="dropdown-link" id="dropdown-branding">Branding</a>
             <a href="/ux/ui" class="dropdown-link" id="dropdown-ux-ui">UX/UI</a>
             <a href="/merch" class="dropdown-link" id="dropdown-merch">Merch</a>
-            <a href="#contacto" class="dropdown-link" id="contact-btn"
-                >Contacto</a
-            >
+            <a href="#contacto" class="dropdown-link" id="contact-btn">Contacto</a>
         </div>
     </div>
 </nav>
 
 <style>
     .navbar {
-        display: inline-flex; /* Ajuste el contenido al tamaño del contenido interior */
-        border-radius: 10px;
+        display: flex; /* Ajuste el contenido al tamaño del contenido interior */
+        border-radius: 1vh;
         background: #4d4d4d;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0vh 0.4vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
         color: white;
         align-items: center;
         justify-content: center;
@@ -74,42 +63,43 @@ console.log("Javascript");
     }
 
     .navbar-list {
-        margin: 0 20px;
-        font-size: 20px;
+        margin: 0 2vw;
+        font-size: 2vh;
         font-family: "Apfel Grotezk";
     }
 
     .navbar-hip {
         color: white;
         text-decoration: none;
-        padding: 15px 20px;
+        padding: 1.5vh 2vw;
         display: block;
     }
+
     .navbar-hip.active {
         color: black;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 1vh;
     }
 
     .navbar-list.active .navbar-hip {
         color: black;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 1vh;
     }
-    /* Estilos del menú hamburger */
+
     .hamburger-menu {
         display: none; /* Oculto por defecto */
         flex-direction: column;
         justify-content: space-around;
-        width: 30px;
-        height: 24px;
+        width: 3vw;
+        height: 2.4vh;
         cursor: pointer;
         transition: all 0.3 ease-in-out;
     }
 
     .bar {
         width: 100%;
-        height: 3px;
+        height: 0.3vh;
         background-color: #fff;
         transition: 0.3s;
     }
@@ -118,22 +108,22 @@ console.log("Javascript");
         display: none; /* Oculto por defecto */
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 6vh;
         background-color: #262525;
-        border: 1px solid #fff;
-        border-radius: 8px;
-        padding: 10px;
+        border: 0.1vh solid #fff;
+        border-radius: 0.8vh;
+        padding: 1vh;
         width: 7em;
         z-index: 1000;
     }
 
     .dropdown-link {
-        margin: 5px 0;
+        margin: 0.5vh 0;
         padding: 5%;
         color: #fff;
         text-decoration: none;
         font-family: "ApfelGrotezkMittel";
-        font-size: 16px;
+        font-size: 1.6vh;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -143,7 +133,7 @@ console.log("Javascript");
     .dropdown-link:hover {
         color: black;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 1vh;
     }
 
     .dropdown-menu.show {
@@ -154,17 +144,16 @@ console.log("Javascript");
     .dropdown-link.active {
         color: black;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 1vh;
     }
 
-    /* Mostrar el menú hamburger en pantallas pequeñas */
     @media only screen and (max-width: 768px) {
         .hamburger-menu {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 24px;
-            width: 30px;
+            height: 2.4vh;
+            width: 3vw;
         }
 
         .ls-buttons {
@@ -187,9 +176,8 @@ console.log("Javascript");
         }
     }
 
-    /* Rotar la barra superior e inferior cuando el menú está activo */
     .hamburger-menu.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(10px, 5px);
+        transform: rotate(45deg) translate(1vh, 0.5vh);
     }
 
     .hamburger-menu.active .bar:nth-child(2) {
@@ -197,7 +185,7 @@ console.log("Javascript");
     }
 
     .hamburger-menu.active .bar:last-child {
-        transform: rotate(-45deg) translate(10px, -5px);
+        transform: rotate(-45deg) translate(1vh, -0.5vh);
     }
 </style>
 
