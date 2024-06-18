@@ -192,43 +192,45 @@ console.log("Javascript");
 <script>
     const hamburgerMenu = document.getElementById("hamburger-menu");
     const dropdownMenu = document.getElementById("dropdown-menu");
-
-    hamburgerMenu.addEventListener("click", () => {
-        hamburgerMenu.classList.toggle("active");
-        dropdownMenu.classList.toggle("show");
-    });
-
+    
+    if (hamburgerMenu && dropdownMenu) {
+        hamburgerMenu.addEventListener("click", () => {
+            hamburgerMenu.classList.toggle("active");
+            dropdownMenu.classList.toggle("show");
+        });
+    }
+    
     document.addEventListener("DOMContentLoaded", () => {
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll(".navbar-hip");
         const dropdownLinks = document.querySelectorAll(".dropdown-link");
-        let activeLink = null;
-        let activeDropdownLink = null;
-
+        let activeLink: HTMLElement | null = null;
+        let activeDropdownLink: HTMLElement | null = null;
+        
         navLinks.forEach((link) => {
             if (link.getAttribute("href") === currentPath) {
                 link.classList.add("active");
-                activeLink = link;
+                activeLink = link as HTMLElement;
             }
-
+        
             link.addEventListener("click", () => {
                 if (activeLink) activeLink.classList.remove("active");
                 link.classList.add("active");
-                activeLink = link;
+                activeLink = link as HTMLElement;
             });
         });
-
+        
         dropdownLinks.forEach((link) => {
             if (link.getAttribute("href") === currentPath) {
                 link.classList.add("active");
-                activeDropdownLink = link;
+                activeDropdownLink = link as HTMLElement;
             }
-
+        
             link.addEventListener("click", () => {
                 if (activeDropdownLink)
                     activeDropdownLink.classList.remove("active");
                 link.classList.add("active");
-                activeDropdownLink = link;
+                activeDropdownLink = link as HTMLElement;
             });
         });
     });
