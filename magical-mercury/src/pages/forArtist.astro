@@ -200,8 +200,7 @@ main {
 }
 
 .btn:hover {
-    transition: transform 0.3s ease; /* Añade una transición suave para el transform */
-    transform: scale(1.1); /* Hace que el botón sea un 10% más grande */
+    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
     background-color: black; /* Cambia el color de fondo a negro */
     color: white !important; /* Forza el cambio de color del texto a blanco */
 }
@@ -236,10 +235,10 @@ main {
 }
 
 .box-content {
-    padding: 20px;
+    padding: 0 0 0 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Asegura que el contenido esté alineado correctamente */
+    justify-content: space-evenly; /* Asegura que el contenido esté alineado correctamente */
     height: 100%; /* Asegura que el contenido llene toda la altura del contenedor */
 }
 
