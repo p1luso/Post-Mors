@@ -10,80 +10,8 @@ import Nav from "../components/Nav.astro";
                 <img class="logo" src="/logo.png" />
                 <Nav />
             </div>
-            <section class="hero">
-                <h1 class="hero-tittle">For Artists</h1>
-                <p class="hero-text">
-                    Construcción de Roll-Outs, merch, artes de tapa, visuales y
-                    estética para <span id="hero-span">artistas argentinos</span
-                    >.
-                </p>
-            </section>
-
-            <section class="services">
-                <div class="service service-fuga-mediante">
-                    <h2 class="services-titles">Fuga Mediante</h2>
-                    <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
-                    </div>
-                </div>
-                <div class="service service-vamos-pamos">
-                    <h2 class="services-titles">
-                        Vamos Pamos & The New Seasons
-                    </h2>
-                    <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="offerings">
-                <h2 class="offering-title">Que ofrecemos</h2>
-                <div class="box-container">
-                    <div class="box">
-                        <div class="box-content complete-pack">
-                            <h1 class="box-tittle">Pack Completo</h1>
-                            <p class="box-text">
-                                 Arte de tapa, Flyers para redes, visuales,
-                                merch, Spotify Canvas.
-                            </p>
-                            <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="box-content">
-                            <h1 class="box-tittle">Arte de Tapa</h1>
-                            <p class="box-text">
-                                 Distintas variaciones para la portada de tu
-                                single, EP o LP.
-                            </p>
-                            <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="box-content">
-                            <h1 class="box-tittle">Roll-Out</h1>
-                            <p class="box-text">
-                                 Realizamos únicamente piezas gráficas para redes
-                                sociales a partir de tu arte de tapa ya
-                                existente.
-                            </p>
-                            <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <h2 class="merch-tittle">Merch</h2>
+            <p class="merch-text">Servicio de merch será introducido proximamente.</p>
         </div>
     </main>
 </Layout>
@@ -122,186 +50,30 @@ main {
     left: 0%;
 }
 
-.hero-tittle {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.hero-text {
-    width: 62%;
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#hero-span {
-    font-weight: bold;
-}
-
-.services {
-    display: flex;
-    justify-content: start;
-    gap: 10px; /* Reduce el espacio entre los elementos */
-    padding: 20px 0;
-}
-
-.service {
-    text-align: center;
-    height: 35vh; /* Ajusta la altura según tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 10px;
-}
-
-.service-fuga-mediante {
-    background-image: url("/fuga-mediante.png");
-    width: 30em; /* Ajusta el ancho según tu imagen */
-}
-
-.service-vamos-pamos {
-    background-image: url("/vamosPamos.png");
-    width: 30em; /* Ajusta el ancho según tu imagen */
-}
-
-.services-titles {
-    font-family: "Neue Haas Grotesk Display Pro";
-    color: white;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 0 3.5%;
-}
-
-.buttons {
-    display: flex;
-    justify-content: start;
-    padding: 3.5%;
-}
-
-.btn {
-    color: white;
-    border-color: white;
-}
-
-.btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-}
-
-.box-container {
-    display: flex;
-    gap: 20px; /* Espacio entre las cajas */
-    flex-wrap: wrap; /* Permite que las cajas se envuelvan en varias líneas si es necesario */
-    justify-content: start;
-    width: 90%;
-    margin-bottom: 10%;
-}
-
-.box {
-    border-radius: 29px;
-    background-color: white;
-    width: 29%; /* Ajusta el ancho según tus necesidades */
-    flex-grow: 1;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el botón esté alineado correctamente */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Añade sombra para dar profundidad */
-}
-
-.box .btn {
-    color: black;
-    border-color: black;
-}
-
-.box-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el contenido esté alineado correctamente */
-    height: 100%; /* Asegura que el contenido llene toda la altura del contenedor */
-    padding: 0 5%;
-}
-
-.box-text {
-    color: black;
-    font-family: "ApfelGrotezkFett";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    flex-grow: 1; /* Permite que el texto crezca para llenar el espacio disponible */
-    margin-bottom: 20px; /* Añade margen inferior para separar el texto del botón */
-    margin-top: -3%;
-    margin-bottom: 10%;
-    
-}
-
-.box-tittle {
-    color: black;
-    font-family: "ApfelGrotezkSatt";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.complete-pack {
-    border-radius: 29px;
-    background: radial-gradient(
-        216.91% 103.24% at 97.78% 8.48%,
-        #b22a2a 0%,
-        #7271d1 100%
-    );
-}
-
-.complete-pack .btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-    border-color: black;
-}
-
-
-.complete-pack .box-text, .complete-pack .box-tittle{
-    color: white;
-}
-
-.complete-pack .btn {
-    color: white;
-    border-color: white;
-}
-
-.buttons-offering
+.merch-tittle
 {
-    padding: 1% 0 5% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+font-family: "Apfel Grotezk";
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 
-.offering-title {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
+.merch-text
+{
+    color: #FFF;
+font-family: "Apfel Grotezk";
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+display: flex;
+align-items: center;
+justify-content: center;
 }
-
 
 </style>
