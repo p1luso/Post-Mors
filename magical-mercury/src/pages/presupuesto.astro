@@ -10,11 +10,59 @@ import Nav from "../components/Nav.astro";
                 <img class="logo" src="/logo.png" />
                 <Nav />
             </div>
-            <h2 class="merch-tittle">Merch</h2>
-            <p class="merch-text">Servicio de merch será introducido proximamente.</p>
+            <div class="form-container" id="form-container">
+                <h2 class="presupuesto-title">Pedir presupuesto</h2>
+                <form class="presupuesto-form" id="presupuesto-form">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="Nombre" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <textarea id="message" name="message" placeholder="Hola! Necesitaría saber el presupuesto para..." required></textarea>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+            <div class="success-container hidden" id="success-container">
+                <div class="success-icon">✔️</div>
+                <h2 class="success-title">Tu solicitud fue enviada con éxito</h2>
+                <p class="success-text">Recibirás un mail en los próximos días con la resolución de tu presupuesto</p>
+                <a href="/" class="btn">Volver al inicio</a>
+            </div>
         </div>
     </main>
 </Layout>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID"); // Reemplaza con tu User ID de EmailJS
+   })();
+
+document.getElementById('presupuesto-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const templateParams = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        document.getElementById('form-container').classList.add('hidden');
+        document.getElementById('success-container').classList.remove('hidden');
+    }, function(error) {
+        console.log('FAILED...', error);
+        alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo.');
+    });
+});
+</script>
+
+
 
 <style>
  #nav {
@@ -50,30 +98,100 @@ main {
     left: 0%;
 }
 
-.merch-tittle
-{
+.presupuesto-title {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     color: #FFF;
-font-family: "Apfel Grotezk";
-font-size: 50px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    font-family: "Apfel Grotezk";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
-.merch-text
-{
-    color: #FFF;
-font-family: "Apfel Grotezk";
-font-size: 50px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-display: flex;
-align-items: center;
-justify-content: center;
+.form-container,
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 20px;
+}
+
+.presupuesto-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background: transparent;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 18px;
+}
+
+textarea {
+    height: 30vh;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    width: 15%;
+}
+
+.btn:hover {
+    background-color: black;
+    border-color: black;
+    color: white !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.success-icon {
+    font-size: 50px;
+    color: #fff;
+}
+
+.success-title {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.success-text {
+    color: #aaa;
+    font-family: "Apfel Grotezk";
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 </style>
