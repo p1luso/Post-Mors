@@ -23,7 +23,7 @@ import Nav from "../components/Nav.astro";
                 <div class="service service-fuga-mediante">
                     <h2 class="services-titles">Fuga Mediante</h2>
                     <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
+                        <a href="/presupuesto" class="btn btn-presupuesto">Ver trabajo</a>
                     </div>
                 </div>
                 <div class="service service-vamos-pamos">
@@ -31,7 +31,7 @@ import Nav from "../components/Nav.astro";
                         Vamos Pamos & The New Seasons
                     </h2>
                     <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
+                        <a href="/presupuesto" class="btn btn-presupuesto">Ver trabajo</a>
                     </div>
                 </div>
             </section>
@@ -47,9 +47,7 @@ import Nav from "../components/Nav.astro";
                                 merch, Spotify Canvas.
                             </p>
                             <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
+                                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
                             </div>
                         </div>
                     </div>
@@ -61,9 +59,7 @@ import Nav from "../components/Nav.astro";
                                 single, EP o LP.
                             </p>
                             <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
+                                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
                             </div>
                         </div>
                     </div>
@@ -76,9 +72,7 @@ import Nav from "../components/Nav.astro";
                                 existente.
                             </p>
                             <div class="buttons-offering">
-                                <button class="btn btn-presupuesto"
-                                    >Pedir presupuesto</button
-                                >
+                                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +81,6 @@ import Nav from "../components/Nav.astro";
         </div>
     </main>
 </Layout>
-
 <style>
  #nav {
     display: flex;
@@ -288,9 +281,8 @@ main {
     border-color: white;
 }
 
-.buttons-offering
-{
-    padding: 1% 0 5% 0;
+.buttons-offering {
+    padding: 1% 0 10% 0;
 }
 
 .offering-title {
