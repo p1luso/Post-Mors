@@ -170,12 +170,12 @@ main {
 
 .service-fuga-mediante {
     background-image: url("/fuga-mediante.png");
-    width: 30em; /* Ajusta el ancho según tu imagen */
+    width: 45em; /* Ajusta el ancho según tu imagen */
 }
 
 .service-vamos-pamos {
     background-image: url("/vamosPamos.png");
-    width: 30em; /* Ajusta el ancho según tu imagen */
+    width: 45em; /* Ajusta el ancho según tu imagen */
 }
 
 .services-titles {
@@ -302,6 +302,52 @@ main {
     line-height: normal;
     margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
 }
+@media only screen and (max-width: 1280px) 
+{
+    .service
+    {
+        height:45vh;
+    }
 
+    .service-fuga-mediante {
+    width: 35em; /* Ajusta el ancho según tu imagen */
+}
+
+.service-vamos-pamos {
+    width: 35em; /* Ajusta el ancho según tu imagen */
+}
+
+}
 
 </style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkScroll = (scrollContainer: HTMLElement, fadeScrollContainer: HTMLElement) => {
+            if (scrollContainer.scrollLeft > 0) {
+                fadeScrollContainer.classList.add('has-scroll-left');
+            } else {
+                fadeScrollContainer.classList.remove('has-scroll-left');
+            }
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth) {
+                fadeScrollContainer.classList.add('has-scroll-right');
+            } else {
+                fadeScrollContainer.classList.remove('has-scroll-right');
+            }
+        };
+    
+        const initScrollFade = (containerId: string) => {
+            const scrollContainer = document.getElementById(containerId);
+            const fadeScrollContainer = scrollContainer?.parentElement as HTMLElement;
+            if (!scrollContainer || !fadeScrollContainer) return;
+    
+            scrollContainer.addEventListener('scroll', () => checkScroll(scrollContainer, fadeScrollContainer));
+            window.addEventListener('resize', () => checkScroll(scrollContainer, fadeScrollContainer));
+            checkScroll(scrollContainer, fadeScrollContainer); // Initial check
+        };
+    
+        initScrollFade('services-scroll-container');
+        initScrollFade('offerings-scroll-container');
+    });
+    </script>

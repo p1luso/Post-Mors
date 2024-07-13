@@ -180,19 +180,19 @@ import Nav from "../components/Nav.astro";
     grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
     margin: 0 20%; /* Centrar el contenedor horizontalmente */
     max-width: 1200px; /* Ancho máximo del contenedor */
-    max-height: 968px;
+    max-height: 900px;
     padding: 20px; /* Espacio alrededor del contenido */
   }
 
   .left-side {
     grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
     margin-top: 3%;
-    max-height: 968px;
+    max-height: 900px;
   }
 
   .right-side {
     grid-column: 2; /* A|signa la columna 2 al lado derecho */
-    max-height: 968px;
+    max-height: 900px;
   }
 
   .box-container {
@@ -201,7 +201,7 @@ import Nav from "../components/Nav.astro";
     justify-self: center;
     margin-left: 5%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
     overflow-y: auto; /* Hace que el contenido sea desplazable */
-    max-height: 90%;/* Resta 50px del 100vh */
+    max-height: 94%;/* Resta 50px del 100vh */
     scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
     -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
   }
@@ -445,7 +445,9 @@ import Nav from "../components/Nav.astro";
     font-size: 24px; /* Ajustar tamaño de fuente */
   }
 
-
+  .btn{
+    padding: 8px 5px;
+  }
 }
 
   /* Estilos para pantallas pequeñas (móviles) */
