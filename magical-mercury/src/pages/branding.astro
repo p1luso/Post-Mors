@@ -167,7 +167,6 @@ main {
     display: flex;
     justify-content: start;
     gap: 10px; /* Reduce el espacio entre los elementos */
-    padding: 20px 0;
 }
 .box-container-service {
     display: flex;
@@ -358,14 +357,22 @@ main {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
+}
+
+@media only screen and (max-width: 1280px) 
+{
+    .service
+    {
+        height:45vh;
+        width:35em;
+    }
 }
 
 </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const checkScroll = (scrollContainer, fadeScrollContainer) => {
+        const checkScroll = (scrollContainer: HTMLElement, fadeScrollContainer: HTMLElement) => {
             if (scrollContainer.scrollLeft > 0) {
                 fadeScrollContainer.classList.add('has-scroll-left');
             } else {
@@ -378,9 +385,9 @@ main {
             }
         };
     
-        const initScrollFade = (containerId) => {
+        const initScrollFade = (containerId: string) => {
             const scrollContainer = document.getElementById(containerId);
-            const fadeScrollContainer = scrollContainer?.parentElement;
+            const fadeScrollContainer = scrollContainer?.parentElement as HTMLElement;
             if (!scrollContainer || !fadeScrollContainer) return;
     
             scrollContainer.addEventListener('scroll', () => checkScroll(scrollContainer, fadeScrollContainer));
