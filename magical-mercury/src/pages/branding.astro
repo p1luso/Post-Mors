@@ -19,27 +19,27 @@ import Nav from "../components/Nav.astro";
                 </p>
             </section>
 
-            <section class="services">
-                <div class="service branding-fuga">
-                    <h2 class="services-titles">Mkit</h2>
-                    <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
-                    </div>
-                </div>
-                <div class="service branding-fuga2">
-                    <h2 class="services-titles">
-                        MACBA
-                    </h2>
-                    <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
-                    </div>
-                </div>
-                <div class="service branding-fuga3">
-                    <h2 class="services-titles">
-                        MACN
-                    </h2>
-                    <div class="buttons">
-                        <button class="btn btn-presupuesto">Ver trabajo</button>
+            <section class="services fade-scroll-container">
+                <div class="scroll-container" id="services-scroll-container">
+                    <div class="box-container-service">
+                        <div class="service branding-fuga">
+                            <h2 class="services-titles">Mkit</h2>
+                            <div class="buttons">
+                                <button class="btn btn-presupuesto">Ver trabajo</button>
+                            </div>
+                        </div>
+                        <div class="service branding-fuga2">
+                            <h2 class="services-titles">MACBA</h2>
+                            <div class="buttons">
+                                <button class="btn btn-presupuesto">Ver trabajo</button>
+                            </div>
+                        </div>
+                        <div class="service branding-fuga3">
+                            <h2 class="services-titles">MACN</h2>
+                            <div class="buttons">
+                                <button class="btn btn-presupuesto">Ver trabajo</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -47,7 +47,7 @@ import Nav from "../components/Nav.astro";
             <section class="offerings">
                 <h2 class="offering-title">Que ofrecemos</h2>
                 <div class="fade-scroll-container">
-                    <div class="scroll-container" id="scroll-container">
+                    <div class="scroll-container" id="offerings-scroll-container">
                         <div class="box-container">
                             <div class="box">
                                 <div class="box-content complete-pack">
@@ -169,6 +169,11 @@ main {
     gap: 10px; /* Reduce el espacio entre los elementos */
     padding: 20px 0;
 }
+.box-container-service {
+    display: flex;
+    gap: 20px; /* Espacio entre las cajas */
+    flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
+}
 
 .service {
     text-align: center;
@@ -196,7 +201,7 @@ main {
     width: 38em; /* Ajusta el ancho según tu imagen */
 }
 .branding-fuga3 {
-    background-image: url("/branding-fuga3.png");
+    background-image: url("branding-fuga3.png");
     width: 38em; /* Ajusta el ancho según tu imagen */
 }
 
@@ -232,6 +237,7 @@ main {
 }
 
 .scroll-container {
+    display: flex;
     overflow-x: scroll; /* Cambia de auto a scroll */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
@@ -355,30 +361,35 @@ main {
     margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
 }
 
-
 </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const scrollContainer = document.getElementById('scroll-container');
-        const fadeScrollContainer = scrollContainer?.parentElement;
-    
-        function checkScroll() {
-            if (scrollContainer?.scrollLeft ?? 0 > 0) {
-                fadeScrollContainer?.classList.add('has-scroll-left');
+        const checkScroll = (scrollContainer, fadeScrollContainer) => {
+            if (scrollContainer.scrollLeft > 0) {
+                fadeScrollContainer.classList.add('has-scroll-left');
             } else {
-                fadeScrollContainer?.classList.remove('has-scroll-left');
+                fadeScrollContainer.classList.remove('has-scroll-left');
             }
-            if ((scrollContainer?.scrollLeft ?? 0) + (scrollContainer?.clientWidth ?? 0) < (scrollContainer?.scrollWidth ?? 0)) {
-                fadeScrollContainer?.classList.add('has-scroll-right');
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth) {
+                fadeScrollContainer.classList.add('has-scroll-right');
             } else {
-                fadeScrollContainer?.classList.remove('has-scroll-right');
+                fadeScrollContainer.classList.remove('has-scroll-right');
             }
-        }
+        };
     
-        scrollContainer?.addEventListener('scroll', checkScroll);
-        window.addEventListener('resize', checkScroll);
-        checkScroll(); // Initial check
+        const initScrollFade = (containerId) => {
+            const scrollContainer = document.getElementById(containerId);
+            const fadeScrollContainer = scrollContainer?.parentElement;
+            if (!scrollContainer || !fadeScrollContainer) return;
+    
+            scrollContainer.addEventListener('scroll', () => checkScroll(scrollContainer, fadeScrollContainer));
+            window.addEventListener('resize', () => checkScroll(scrollContainer, fadeScrollContainer));
+            checkScroll(scrollContainer, fadeScrollContainer); // Initial check
+        };
+    
+        initScrollFade('services-scroll-container');
+        initScrollFade('offerings-scroll-container');
     });
     </script>
     
