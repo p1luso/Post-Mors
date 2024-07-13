@@ -18,50 +18,53 @@ import Nav from "../components/Nav.astro";
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <textarea id="message" name="message" placeholder="Hola! Necesitaría saber el presupuesto para..." required></textarea>
-                    <button type="submit" class="btn">Enviar mensaje</button>
+                    <button type="submit" class="btn btn-form">Enviar mensaje</button>
                 </form>
             </div>
             <div class="success-container hidden" id="success-container">
-                <div class="success-icon">✔️</div>
+                <img src="/check_circle.png" class="success-icon">
                 <h2 class="success-title">Tu solicitud fue enviada con éxito</h2>
                 <p class="success-text">Recibirás un mail en los próximos días con la resolución de tu presupuesto</p>
-                <a href="/" class="btn">Volver al inicio</a>
+                <a href="/" class="btn btn-form">Volver al inicio</a>
             </div>
         </div>
     </main>
 </Layout>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
-   (function(){
-      emailjs.init("nh0n8SRxdfzJxWhmE"); // Reemplaza con tu User ID de EmailJS
-   })();
-
-document.getElementById('presupuesto-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "nh0n8SRxdfzJxWhmE",
+        });
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('presupuesto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
     const templateParams = {
         name: name,
         email: email,
         message: message
     };
-
-    emailjs.send('service_7sd5ero', 'template_dyx6cuf', templateParams)
-    .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        document.getElementById('form-container').classList.add('hidden');
+            // these IDs from the previous steps
+            emailjs.sendForm('service_7sd5ero', 'template_dyx6cuf', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                    document.getElementById('form-container').classList.add('hidden');
         document.getElementById('success-container').classList.remove('hidden');
-    }, function(error) {
-        console.log('FAILED...', error);
-        alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo.');
-    });
-});
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
 </script>
-
 
 
 <style>
@@ -111,13 +114,25 @@ main {
     margin-bottom: 20px;
 }
 
-.form-container,
-.success-container {
+.btn-form
+{
+    width:15%;
+}
+
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     padding: 20px;
+}
+
+.success-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .presupuesto-form {
@@ -159,7 +174,6 @@ textarea::placeholder {
 .btn {
     background-color: white;
     color: black;
-    width: 15%;
 }
 
 .btn:hover {
@@ -173,25 +187,29 @@ textarea::placeholder {
 }
 
 .success-icon {
-    font-size: 50px;
-    color: #fff;
+    width: 15vh;
+    margin-top: 10%;
 }
 
 .success-title {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    margin: 20px 0;
+    color: #FFF;
+font-family: "Apfel Grotezk";
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 
 .success-text {
-    color: #aaa;
-    font-family: "Apfel Grotezk";
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 20px;
+    width: 16em;
+    color: #FFF;
+text-align: center;
+font-family: "Apfel Grotezk";
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: -2%;
 }
 
 </style>
