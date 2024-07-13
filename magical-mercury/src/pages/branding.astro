@@ -47,7 +47,7 @@ import Nav from "../components/Nav.astro";
             <section class="offerings">
                 <h2 class="offering-title">Que ofrecemos</h2>
                 <div class="fade-scroll-container">
-                    <div class="scroll-container">
+                    <div class="scroll-container" id="scroll-container">
                         <div class="box-container">
                             <div class="box">
                                 <div class="box-content complete-pack">
@@ -104,6 +104,7 @@ import Nav from "../components/Nav.astro";
         </div>
     </main>
 </Layout>
+
 
 <style>
 #nav {
@@ -195,7 +196,7 @@ main {
     width: 30em; /* Ajusta el ancho según tu imagen */
 }
 .branding-fuga3 {
-    background-image: url("/branding-fuga3.png");
+    background-image: url("branding-fuga3.png");
     width: 30em; /* Ajusta el ancho según tu imagen */
 }
 
@@ -245,9 +246,10 @@ main {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 1vh; /* Ajusta el ancho del fade */
+    width: 50px; /* Ajusta el ancho del fade */
     pointer-events: none;
     background: linear-gradient(to right, #262525, transparent);
+    display: none; /* Por defecto, no se muestra */
 }
 
 .fade-scroll-container::after {
@@ -255,10 +257,16 @@ main {
     background: linear-gradient(to left, #262525, transparent);
 }
 
+.fade-scroll-container.has-scroll-left::before,
+.fade-scroll-container.has-scroll-right::after {
+    display: block; /* Mostrar cuando haya scroll */
+}
+
 .box-container {
     display: flex;
     gap: 20px; /* Espacio entre las cajas */
     flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
+    margin-bottom: 10%;
 }
 
 .box {
@@ -346,4 +354,31 @@ main {
     line-height: normal;
     margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
 }
+
+
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollContainer = document.getElementById('scroll-container');
+        const fadeScrollContainer = scrollContainer?.parentElement;
+    
+        function checkScroll() {
+            if (scrollContainer?.scrollLeft ?? 0 > 0) {
+                fadeScrollContainer?.classList.add('has-scroll-left');
+            } else {
+                fadeScrollContainer?.classList.remove('has-scroll-left');
+            }
+            if ((scrollContainer?.scrollLeft ?? 0) + (scrollContainer?.clientWidth ?? 0) < (scrollContainer?.scrollWidth ?? 0)) {
+                fadeScrollContainer?.classList.add('has-scroll-right');
+            } else {
+                fadeScrollContainer?.classList.remove('has-scroll-right');
+            }
+        }
+    
+        scrollContainer?.addEventListener('scroll', checkScroll);
+        window.addEventListener('resize', checkScroll);
+        checkScroll(); // Initial check
+    });
+    </script>
+    
