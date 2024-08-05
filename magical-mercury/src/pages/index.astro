@@ -22,46 +22,62 @@ import Nav from "../components/Nav.astro";
             </p>
           </div>
           <div class="ls-buttons">
-            <button class="btn btn-ls">8-MANIFESTO</button>
-            <button class="btn btn-ls">¿Quiénes somos?</button>
-            <button class="btn btn-ls">Instagram</button>
-            <button class="btn btn-ls">LinkedIn</button>
-            <button class="btn btn-ls">Behance</button>
-            <button class="btn btn-ls" id="contact-btn">Contacto</button>
+            <button class="btn btn-ls" data-target="manifesto">8-MANIFESTO</button>
+            <button class="btn btn-ls" data-target="about">¿Quiénes somos?</button>
+            <button class="btn btn-ls" data-target="instagram">Instagram</button>
+            <button class="btn btn-ls" data-target="linkedin">LinkedIn</button>
+            <button class="btn btn-ls" data-target="behance">Behance</button>
+            <button class="btn btn-ls" data-target="contact" id="contact-btn">Contacto</button>
           </div>
-          <div class="form-container hidden" id="contact-form-container">
-            <!-- Campos del formulario -->
-            <p class="form-text">¡Contáctate con nosotros!</p>
-            <div class="form-group">
-              <form>
-                <div class="up-form-group">
-                  <input
-                    class="up-text"
-                    type="text"
-                    id="up-text1"
-                    name="up-text1"
-                    placeholder="Nombre"
-                  />
-                  <input
-                    class="up-text"
-                    type="text"
-                    id="up-text2"
-                    name="up-text2"
-                    placeholder="Email"
-                  />
-                </div>
-                <textarea
-                  id="textarea"
-                  name="textarea"
-                  placeholder="Contanos que necesitas..."></textarea>
-                <input type="submit" value="Enviar Mensaje" id="mail-button" />
-              </form>
+          
+          <!-- Secciones -->
+          <div id="manifesto" class="content-section hidden">
+            <p>Contenido del manifiesto.</p>
+          </div>
+          <div id="about" class="content-section hidden">
+            <p>Contenido de quiénes somos.</p>
+          </div>
+          <div id="instagram" class="content-section hidden">
+            <p>Contenido de Instagram.</p>
+          </div>
+          <div id="linkedin" class="content-section hidden">
+            <p>Contenido de LinkedIn.</p>
+          </div>
+          <div id="behance" class="content-section hidden">
+            <p>Contenido de Behance.</p>
+          </div>
+          <div id="contact" class="content-section hidden">
+            <div class="form-container" id="contact-form-container">
+              <p class="form-text">¡Contáctate con nosotros!</p>
+              <div class="form-group">
+                <form>
+                  <div class="up-form-group">
+                    <input
+                      class="up-text"
+                      type="text"
+                      id="up-text1"
+                      name="up-text1"
+                      placeholder="Nombre"
+                    />
+                    <input
+                      class="up-text"
+                      type="text"
+                      id="up-text2"
+                      name="up-text2"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <textarea
+                    id="textarea"
+                    name="textarea"
+                    placeholder="Contanos que necesitas..."></textarea>
+                  <input type="submit" value="Enviar Mensaje" id="mail-button" />
+                </form>
+              </div>
             </div>
-            <!-- Otros campos del formulario -->
           </div>
         </div>
       </div>
-
       <div class="right-side">
         <div class="box-container">
           <div class="box">
@@ -120,8 +136,6 @@ import Nav from "../components/Nav.astro";
   </main>
 </Layout>
 
-
-
 <style>
   /* Estilos generales */
 
@@ -138,6 +152,9 @@ import Nav from "../components/Nav.astro";
     justify-content: center;
     flex-direction: column;
   }
+  .hidden {
+  display: none;
+}
 
   @keyframes gradient {
     0% {
@@ -496,3 +513,20 @@ import Nav from "../components/Nav.astro";
     contactFormContainer.style.display = "block";
   }
 </script>
+
+<script>
+  document.querySelectorAll('.btn-ls').forEach(button => {
+    button.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      
+      // Ocultar todas las secciones
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      
+      // Mostrar la sección seleccionada
+      document.getElementById(target).classList.remove('hidden');
+    });
+  });
+</script>
+
