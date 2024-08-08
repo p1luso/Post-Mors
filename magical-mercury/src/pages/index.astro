@@ -5,134 +5,193 @@ import Nav from "../components/Nav.astro";
 
 <Layout title="Post Mors">
   <main>
-    <div id="nav">
-      <Nav />
-    </div>
-    <div class="grid-container">
-      <div class="left-side">
-        <div class="leftSide-container">
+      <div id="nav">
+        <Nav />
+      </div>
+      <div class="grid-container">
+        <div class="logo-text-container">
           <div class="logo-container">
             <img src="/logo.png" alt="Logo" class="logo" />
           </div>
           <div class="subtitle-container">
             <p class="subtitle-text">
-              Espacio de innovación y diseño. Argentino. <br /><span
-                >Cero prejuicios.</span
-              >
+              Espacio de innovación y diseño. Argentino. <br />
+              <span>Cero prejuicios.</span>
             </p>
           </div>
-          <div class="ls-buttons">
-            <button class="btn btn-ls" data-target="manifesto">8-MANIFESTO</button>
-            <button class="btn btn-ls" data-target="about">¿Quiénes somos?</button>
-            <button class="btn btn-ls" data-target="instagram">Instagram</button>
-            <button class="btn btn-ls" data-target="linkedin">LinkedIn</button>
-            <button class="btn btn-ls" data-target="behance">Behance</button>
-            <button class="btn btn-ls" data-target="contact" id="contact-btn">Contacto</button>
+        </div>
+        <div class="left-side">
+          <div class="leftSide-container">
+            <div class="ls-buttons">
+              <button class="btn btn-ls" data-target="manifesto"
+                >8-MANIFESTO</button
+              >
+              <button class="btn btn-ls" data-target="about"
+                >¿Quiénes somos?</button
+              >
+              <a class="btn btn-ls" href="https://www.instagram.com/post___mors/"
+                >Instagram</a
+              >
+              <a class="btn btn-ls" href="https://www.linkedin.com/company/post-mors"
+                >LinkedIn</a
+              >
+              <button class="btn btn-ls" data-target="behance">Behance</button>
+              <button class="btn btn-ls" data-target="contact" id="contact-btn"
+                >Contacto</button
+              >
+            </div>
+
+            <!-- Secciones -->
+            <div id="manifesto" class="content-section hidden">
+              <div class="manifesto-content-box">
+                <h3 class="manifesto-content-h3">8-MANIFESTO</h3>
+                <p class="manifesto-content-text">
+                  <span class="manifesto-text"
+                    >Nuestros 8 objetivos y pensamientos a la hora de diseñar</span
+                  >:
+                  <ul class="manifesto-ul">
+                    <li class="manifesto-lists">DISEÑAR SIN PREJUICIOS</li>
+                    <li class="manifesto-lists">VOLAR</li>
+                    <li class="manifesto-lists">CONVIVIR CON EL USUARIO</li>
+                    <li class="manifesto-lists">SER MEJOR TODOS LOS DÍAS</li>
+                    <li class="manifesto-lists">UN NUEVO MUNDO</li>
+                    <li class="manifesto-lists">NO MORIR CON TU IDEA</li>
+                    <li class="manifesto-lists">DISFRUTA EL CAMINO</li>
+                    <li class="manifesto-lists">
+                      EL ORDEN NO ES MALO SI TODOS LO ENTIENDEN
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+            <div id="about" class="content-section hidden">
+              <div class="about-content-box">
+                <h3 class="about-content-h3">¿Quiénes somos?</h3>
+                <p class="about-content-text">
+                  Somos <span class="about-span">Ramiro y Agustín.</span> Dos diseñadores
+                  amigos que se conocieron estudiando la carrera de Diseño Gráfico.
+                  Post Mors es nuestro
+                  <span class="about-span"
+                    >espacio de creatividad e innovación</span
+                  > en la cual nos divertimos y experimentamos con clientes.
+                </p>
+              </div>
+            </div>
+            <div id="instagram" class="content-section hidden">
+              <p>Contenido de Instagram.</p>
+            </div>
+            <div id="linkedin" class="content-section hidden">
+              <p>Contenido de LinkedIn.</p>
+            </div>
+            <div id="behance" class="content-section hidden">
+              <p>Contenido de Behance.</p>
+            </div>
+            <div id="contact" class="content-section hidden">
+              <div class="form-container" id="contact-form-container">
+                <p class="form-text">¡Contáctate con nosotros!</p>
+                <div class="form-group">
+                  <form class="landing-form" id="landing-form">
+                    <div class="up-form-group">
+                      <input
+                        class="up-text"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nombre"
+                        required
+                      />
+                      <input
+                        class="up-text"
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Contanos que necesitas..."
+                      required></textarea>
+                    <div class="loading-button">
+                      <input
+                        type="submit"
+                        value="Enviar Mensaje"
+                        class="btn"
+                        id="submit-button"
+                      />
+                      <div class="loader hidden" id="loader"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <!-- Secciones -->
-          <div id="manifesto" class="content-section hidden">
-            <p>Contenido del manifiesto.</p>
-          </div>
-          <div id="about" class="content-section hidden">
-            <p>Contenido de quiénes somos.</p>
-          </div>
-          <div id="instagram" class="content-section hidden">
-            <p>Contenido de Instagram.</p>
-          </div>
-          <div id="linkedin" class="content-section hidden">
-            <p>Contenido de LinkedIn.</p>
-          </div>
-          <div id="behance" class="content-section hidden">
-            <p>Contenido de Behance.</p>
-          </div>
-          <div id="contact" class="content-section hidden">
-            <div class="form-container" id="contact-form-container">
-              <p class="form-text">¡Contáctate con nosotros!</p>
-              <div class="form-group">
-                <form>
-                  <div class="up-form-group">
-                    <input
-                      class="up-text"
-                      type="text"
-                      id="up-text1"
-                      name="up-text1"
-                      placeholder="Nombre"
-                    />
-                    <input
-                      class="up-text"
-                      type="text"
-                      id="up-text2"
-                      name="up-text2"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <textarea
-                    id="textarea"
-                    name="textarea"
-                    placeholder="Contanos que necesitas..."></textarea>
-                  <input type="submit" value="Enviar Mensaje" id="mail-button" />
-                </form>
+        </div>
+        <div class="right-side">
+          <div class="box-container">
+            <div class="box">
+              <div class="box-content">
+                <h1 class="box-tittle">For Artists</h1>
+                <p class="box-text">
+                  Construcción de Roll-Outs, artes de tapa, visuales y estética
+                  para artistas argentinos.
+                </p>
+                <div class="buttons">
+                  <button class="btn btn-portfolio">Ver portfolio</button>
+                  <a href="/presupuesto" class="btn btn-presupuesto"
+                    >Pedir presupuesto</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <h1 class="box-tittle">Branding</h1>
+                <p class="box-text">
+                  Construcción de sistema complejo de Diseño de marca, rebrading
+                  o re-styling.
+                </p>
+                <div class="buttons">
+                  <a href="/presupuesto" class="btn btn-presupuesto"
+                    >Pedir presupuesto</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <h1 class="box-tittle">UX/UI</h1>
+                <p class="box-text">
+                  Prototipado de app, web app o landing page para tu
+                  emprendimiento o empresa.
+                </p>
+                <div class="buttons">
+                  <button class="btn btn-portfolio">Ver portfolio</button>
+                  <a href="/presupuesto" class="btn btn-presupuesto"
+                    >Pedir presupuesto</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <h1 class="box-tittle">Merch</h1>
+                <p class="box-text">
+                  Merchandising para artistas, empresas o emprendimientos.
+                </p>
+                <div class="buttons">
+                  <button class="btn btn-portfolio">Ver portfolio</button>
+                  <a href="/presupuesto" class="btn btn-presupuesto"
+                    >Pedir presupuesto</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="right-side">
-        <div class="box-container">
-          <div class="box">
-            <div class="box-content">
-              <h1 class="box-tittle">For Artists</h1>
-              <p class="box-text">
-                Construcción de Roll-Outs, artes de tapa, visuales y estética
-                para artistas argentinos.
-              </p>
-              <div class="buttons">
-                <button class="btn btn-portfolio">Ver portfolio</button>
-                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-content">
-              <h1 class="box-tittle">Branding</h1>
-              <p class="box-text">
-                Construcción de sistema complejo de Diseño de marca, rebrading o
-                re-styling.
-              </p>
-              <div class="buttons">
-                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-content">
-              <h1 class="box-tittle">UX/UI</h1>
-              <p class="box-text">
-                Prototipado de app, web app o landing page para tu
-                emprendimiento o empresa.
-              </p>
-              <div class="buttons">
-                <button class="btn btn-portfolio">Ver portfolio</button>
-                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-content">
-              <h1 class="box-tittle">Merch</h1>
-              <p class="box-text">
-                Merchandising para artistas, empresas o emprendimientos.
-              </p>
-              <div class="buttons">
-                <button class="btn btn-portfolio">Ver portfolio</button>
-                <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
 </Layout>
 
@@ -150,11 +209,18 @@ import Nav from "../components/Nav.astro";
     animation: gradient 5s ease infinite; /* Aplica la animación */
     display: flex;
     justify-content: center;
+
     flex-direction: column;
   }
   .hidden {
-  display: none;
-}
+    display: none;
+  }
+
+  .btn-ls.active {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
 
   @keyframes gradient {
     0% {
@@ -171,16 +237,13 @@ import Nav from "../components/Nav.astro";
   main {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 5%;
     position: relative;
     align-items: center;
   }
 
   .logo {
-    width: 40%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
-  }
-  .logo-container {
-    margin-bottom: -3%;
+    width: 50vh; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
   }
 
   #nav {
@@ -193,31 +256,44 @@ import Nav from "../components/Nav.astro";
 
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos columnas iguales */
-    margin: 0 20%; /* Centrar el contenedor horizontalmente */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    max-height: 900px;
-    padding: 20px; /* Espacio alrededor del contenido */
+    grid-template-rows: auto 1fr; /* Fila para el logo, otra para los lados */
+    gap: -5%; /* Espacio entre las filas */
+    grid-template-areas:
+      "logo-container right-side" /* Logo y right-side en la misma fila */
+      "left-side right-side"; /* Left-side en la fila siguiente, right-side en ambas filas */
+    margin: 5% 5% 4% 5%; /* Centrar el contenedor horizontalmente */
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necesario para posicionar el logo absolutamente */
   }
 
-  .left-side {
-    grid-column: 1; /* Asigna la columna 1 al lado izquierdo */
-    margin-top: 3%;
-    max-height: 900px;
+  .logo-container {
+    grid-area: logo-container; /* Asigna el área del logo */
+    display: flex;
+    width: fit-content;
+    align-items: center; /* Alinea verticalmente */
+    margin-bottom: -2%;
   }
 
   .right-side {
-    grid-column: 2; /* A|signa la columna 2 al lado derecho */
-    max-height: 900px;
+    grid-area: right-side; /* Define el área del lado derecho */
+    margin-top: -10%; /* Elimina el margen superior */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columnas si es necesario */
   }
 
+  .leftSide-container
+  {
+    width:90%;
+  }
   .box-container {
     display: block;
     align-items: center;
     justify-self: center;
     margin-left: 5%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
     overflow-y: auto; /* Hace que el contenido sea desplazable */
-    max-height: 94%;/* Resta 50px del 100vh */
+    max-height: 100vh; /* Resta 50px del 100vh */
     scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
     -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
   }
@@ -240,6 +316,7 @@ import Nav from "../components/Nav.astro";
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: black;
   }
+
   .box:hover .box-text,
   .box:hover .box-tittle,
   .box:hover .btn {
@@ -288,23 +365,25 @@ import Nav from "../components/Nav.astro";
 
   .subtitle-container {
     display: flex;
-    width: 636px;
+    width: 63vh;
     align-items: left;
     justify-content: left;
   }
+
   .subtitle-text {
     color: #fff;
     font-family: "ApfelGrotezkMitter";
-    font-size: 50px;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: left;
   }
+
   .subtitle-text span {
     color: #fff;
     font-family: "ApfelGrotezkFett";
-    font-size: 50px;
+    font-size: 2.5rem;
     font-weight: bold;
   }
 
@@ -313,14 +392,14 @@ import Nav from "../components/Nav.astro";
     align-items: left;
     justify-content: left;
     width: 90%;
-    margin-top: -4%;
+    margin-top: -3%;
   }
 
   .btn-ls {
     margin: 1% 0.5%;
     color: #fff;
     font-family: "ApfelGrotezkMittel";
-    font-size: 16px;
+    font-size: 2.1vh;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -336,7 +415,7 @@ import Nav from "../components/Nav.astro";
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    width: 93%;
+    width: 100%;
   }
 
   .form-container {
@@ -344,189 +423,494 @@ import Nav from "../components/Nav.astro";
     flex-direction: column;
     align-items: left;
     justify-content: center;
+    margin: 0% 5% 0% 0%;
   }
+
   .form-text {
     color: #fff;
     font-family: "ApfelGrotezkMittel";
-    font-size: 25px;
+    font-size: 3vh;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
+
   .form-container.show {
     display: block;
   }
 
+  
+
+  .landing-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .up-form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
   .form-group .up-text {
-    width: 41%;
-    height: 54px;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total del campo */
+    height: 5vh;
     font-family: "Apfel Grotezk";
-    margin-right: 1%;
     padding-left: 5%;
-    font-size: 25px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: white;
     background-color: transparent;
     border: 1px solid #fff;
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
   .form-group textarea {
-    width: 90%;
+    padding: 10px;
     font-family: "Apfel Grotezk";
-    height: 123px;
+    width: 100%;
+    min-height: 150px; /* Altura mínima del textarea */
+    box-sizing: border-box;
     padding-left: 5%;
-    font-size: 18px;
+    font-size: 1em;
     font-style: normal;
+    color: white;
     font-weight: 400;
     line-height: normal;
     background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 15px;
+    border: 0.3px solid #fff;
+    border-radius: 10px;
+    resize: vertical; /* Permite cambiar el tamaño vertical del textarea */
   }
-  .form-group input,
+
+  .form-group .up-text,
   .form-group textarea {
     margin-bottom: 2%;
+  }
+
+  .loading-button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  #submit-button {
+    margin-right: 5%;
+  }
+
+  /* From Uiverse.io by Fernando-sv */
+  .loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: transparent;
+    border-radius: 50%;
+  }
+
+  .loader {
+    border: 4px solid rgb(177, 177, 177);
+    border-left-color: transparent;
+    width: 25px;
+    height: 25px;
+    animation: spin89345 1s linear infinite;
+  }
+
+  @keyframes spin89345 {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
   }
 
   textarea {
     padding-top: 5%;
   }
 
-  #mail-button {
-    padding: 8px 23px;
-    border-radius: 25px;
-    border: 1px solid #fff;
-    background-color: white;
-    color: #000;
+  .about-content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 85%;
+    color: white;
+    color: #fff;
     font-family: "Apfel Grotezk";
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
-  input::placeholder,
-  textarea::placeholder {
+  .about-content-h3 {
+    margin-bottom: -1%;
     color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  @media only screen and (max-width: 1200px) {
-  body,
-  html,
-  main {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(#262525, #48560f); /* Fondo degradado */
-    background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
-    animation: gradient 5s ease infinite; /* Aplica la animación */
-    display:grid;
+  .about-content-text {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .grid-container {
+  .about-span {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .manifesto-content-box {
     display: flex;
-    flex-direction: column; /* Cambia a columna inversa en pantallas medianas */
-    align-items: center;
-    margin: 0 10vw; /* Ajustar margen */
-    max-width: 80vw; /* Ancho máximo del contenedor */
-    padding: 2vw; /* Espacio alrededor del contenido */
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 85%;
+    color: white;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .left-side,
-  .right-side {
-    width: 100%; /* Asegurar que cada lado ocupe todo el ancho */
-    padding-bottom: 5%;
+  .manifesto-content-h3 {
+    margin-bottom: -1%;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .logo {
-    width: 60%; /* Ajustar tamaño del logo */
+  .manifesto-content-text {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .subtitle-text {
-    font-size: 40px; /* Reducir tamaño de fuente */
+  .manifesto-lists {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .btn-ls {
-    font-size: 14px; /* Ajustar tamaño de fuente de los botones */
+  .manifesto-list {
+    margin-left: 2%;
   }
 
-  .box-content {
-    padding: 15px; /* Ajustar padding */
+  .manifesto-span {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 
-  .box-text,
-  .box-tittle {
-    font-size: 24px; /* Ajustar tamaño de fuente */
+  .projects-content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 85%;
+    color: white;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  .btn{
-    padding: 8px 5px;
+  .projects-content-h3 {
+    margin-bottom: -1%;
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
-}
 
-  /* Estilos para pantallas pequeñas (móviles) */
-  @media only screen and (max-width: 480px) {
+  .projects-content-text {
+    color: #fff;
+    font-family: "Apfel Grotezk";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  @media screen and (max-width: 1200px) {
+    body,
+    html,
+    main {
+      min-height: 100%;
+      margin: 2% 0;
+      padding: 0;
+      background: linear-gradient(#262525, #48560f); /* Fondo degradado */
+      background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
+      animation: gradient 5s ease infinite; /* Aplica la animación */
+      display: grid;
+    }
+
+    .leftSide-container
+    {
+      width:100%;
+    }
+
     .grid-container {
-      margin: 0 3vw; /* Reducir el margen en pantallas pequeñas */
-      padding: 1.5vw; /* Reducir el padding en pantallas pequeñas */
+      grid-template-areas:
+        "logo-text-container"
+        "right-side" /* Lado derecho arriba */
+        "left-side"; /* Lado izquierdo abajo */
+      margin: 5% 3%;
+      min-height: fit-content;
     }
 
-    .logo {
-      width: 80%; /* Ajustar tamaño del logo */
+    .logo-text-container {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; /* Espacio entre el logo y el texto */
     }
 
-    .subtitle-text {
-      font-size: 30px; /* Reducir tamaño de fuente */
+    .loading-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5%;
+      margin-bottom:5%;
+    }
+
+    .left-side {
+      grid-row: 3; /* Asigna la fila 3 al lado izquierdo */
+      margin-top: 10px;
+      margin-bottom: 5%;
+    }
+
+    .right-side {
+      grid-row: 2; /* Asigna la fila 2 al lado derecho */
+      margin-top: 10px;
+    }
+
+    .up-form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra el contenido horizontalmente */
+      justify-content: center; /* Centra el contenido verticalmente */
+      margin: 0;
     }
 
     .btn-ls {
-      font-size: 12px; /* Ajustar tamaño de fuente de los botones */
+      font-size: 14px;
     }
 
-    .box-content {
-      padding: 10px; /* Ajustar padding */
+    .left-side {
+      grid-row: 3; /* Asigna la fila 3 al lado izquierdo */
     }
 
-    .box-text,
-    .box-tittle {
-      font-size: 20px; /* Ajustar tamaño de fuente */
+    .right-side {
+      grid-row: 2; /* Asigna la fila 2 al lado derecho */
     }
+    .subtitle-container {
+      width: 90%;
+      display: flex;
+      text-align: center; /* Centra el texto */
+      justify-content: center;
+      align-items: center;
+    }
+    .right-side,
+  .left-side {
+    margin: 0; /* Elimina cualquier margen que pueda estar afectando el diseño */
+    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+  }
+
+  .box-container {
+    max-height: 100%;
+    margin: 0% auto; /* Centra el contenedor */
+    margin-bottom: auto;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-bottom:5%;
+    margin-top:5%;
+  }
+
+  .logo {
+    width: 80%; /* Ajusta el tamaño del logo */
+  }
+
+  .subtitle-text {
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .form-group .up-text,
+  .form-group textarea {
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .ls-buttons {
+    width: 100%;
+    text-align: center; /* Centra los botones */
+  }
+
+  .btn-ls {
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .form-container {
+    margin: 0; /* Ajusta los márgenes */
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+  }
+
+  .form-text {
+    font-size: 1.9rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .ls-buttons {
+    
+  }
+
+  .landing-form {
+    width: 100%; /* Ajusta el ancho del formulario */
+  }
+
+  .up-form-group {
+    flex-direction: column; /* Organiza los elementos en una sola columna */
+  }
   }
 </style>
-
-<script>
-  const contactBtn = document.getElementById("contact-btn");
-  const contactFormContainer = document.getElementById(
-    "contact-form-container",
-  );
-
-  if (contactBtn) {
-    contactBtn.addEventListener("click", () => {
-      if (contactFormContainer) {
-        contactFormContainer.style.display = "block";
-      }
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+<script type="text/javascript">
+  (function () {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init({
+      publicKey: "nh0n8SRxdfzJxWhmE",
     });
-  }
-  if (contactFormContainer) {
-    contactFormContainer.style.display = "block";
-  }
+  })();
+</script>
+<script type="text/javascript">
+  window.onload = function () {
+    const form = document.getElementById("landing-form");
+    const submitButton = document.getElementById("submit-button"); // Asegúrate de tener un id para el botón de envío
+    const loader = document.getElementById("loader");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Deshabilitar el botón de envío
+      submitButton.disabled = true;
+      loader.classList.remove("hidden");
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const templateParams = {
+        name: name,
+        email: email,
+        message: message,
+      };
+
+      emailjs
+        .sendForm("service_7sd5ero", "template_dyx6cuf", this)
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            alert("El mensaje ha sido enviado exitosamente.");
+
+            // Limpiar el formulario
+            form.reset();
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            alert(
+              "No se pudo enviar el mensaje. Por favor, intente de nuevo más tarde.",
+            );
+          },
+        )
+        .finally(() => {
+          // Habilitar el botón de envío nuevamente
+          submitButton.disabled = false;
+          loader.classList.add("hidden");
+        });
+    });
+  };
 </script>
 
 <script>
-  document.querySelectorAll('.btn-ls').forEach(button => {
-    button.addEventListener('click', function() {
-      const target = this.getAttribute('data-target');
-      
-      // Ocultar todas las secciones
-      document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.add('hidden');
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactBtn = document.getElementById("contact-btn");
+    const contactFormContainer = document.getElementById("contact");
+
+    // Mostrar la sección de contacto y resaltar el botón al cargar la página
+    if (contactBtn && contactFormContainer) {
+      contactFormContainer.classList.remove("hidden");
+      contactBtn.classList.add("active");
+    }
+
+    // Manejar clics en los botones
+    document.querySelectorAll(".btn-ls").forEach((button) => {
+      button.addEventListener("click", function () {
+        const target = this.getAttribute("data-target");
+
+        // Ocultar todas las secciones
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.add("hidden");
+        });
+
+        // Mostrar la sección seleccionada
+        document.getElementById(target).classList.remove("hidden");
+
+        // Eliminar la clase active de todos los botones
+        document.querySelectorAll(".btn-ls").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        // Añadir la clase active al botón clicado
+        this.classList.add("active");
       });
-      
-      // Mostrar la sección seleccionada
-      document.getElementById(target).classList.remove('hidden');
     });
   });
 </script>
-

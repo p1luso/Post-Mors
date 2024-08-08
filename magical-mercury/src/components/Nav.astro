@@ -28,10 +28,10 @@ console.log("Javascript");
             <div class="bar"></div>
         </div>
         <div class="dropdown-menu" id="dropdown-menu">
-            <a href="/Post-Mors/" class="dropdown-link" id="dropdown-inicio">Inicio</a>
-            <a href="/for-artists" class="dropdown-link" id="dropdown-for-artists">For Artists</a>
+            <a href="/" class="dropdown-link" id="dropdown-inicio">Inicio</a>
+            <a href="/forArtist" class="dropdown-link" id="dropdown-for-artists">For Artists</a>
             <a href="/branding" class="dropdown-link" id="dropdown-branding">Branding</a>
-            <a href="/ux/ui" class="dropdown-link" id="dropdown-ux-ui">UX/UI</a>
+            <a href="/ux-ui" class="dropdown-link" id="dropdown-ux-ui">UX/UI</a>
             <a href="/merch" class="dropdown-link" id="dropdown-merch">Merch</a>
             <a href="#contacto" class="dropdown-link" id="contact-btn">Contacto</a>
         </div>
@@ -147,13 +147,52 @@ console.log("Javascript");
         border-radius: 1vh;
     }
 
-    @media only screen and (max-width:1280px)
+    @media only screen and (max-width:1200px)
     {
         .navbar-list
         {
             font-size:3vh
         }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 2.4vh;
+            width: 3vw;
+        }
+
+        .ls-buttons {
+            display: none;
+        }
+
+        #nav {
+            display: flex;
+            position: absolute;
+            top: 25%;
+            left: 5%;
+        }
+
+        .dropdown-menu {
+            display: none;
+        }
+
+        .navbar-brand {
+            display: none;
+        }
     }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(1vh, 0.5vh);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:last-child {
+        transform: rotate(-45deg) translate(1vh, -0.5vh);
+    }
+    
 
     @media only screen and (max-width: 768px) {
         .hamburger-menu {
