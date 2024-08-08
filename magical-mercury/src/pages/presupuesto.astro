@@ -6,219 +6,293 @@ import Nav from "../components/Nav.astro";
 <Layout title="Presupuesto">
     <main>
         <div class="container">
-            <div id="nav">
+            <div class="header">
                 <img class="logo" src="/logo.png" />
-                <Nav />
+                <div id="nav">
+                    <Nav />
+                </div>
             </div>
-            <div class="form-container" id="form-container">
+            <div class="form-container hero" id="form-container">
                 <h2 class="presupuesto-title">Pedir presupuesto</h2>
                 <form class="presupuesto-form" id="presupuesto-form">
                     <div class="input-group">
-                        <input type="text" id="name" name="name" placeholder="Nombre" required>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Nombre"
+                            required
+                        />
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                        />
                     </div>
-                    <textarea id="message" name="message" placeholder="Hola! Necesitaría saber el presupuesto para..." required></textarea>
-                    <button type="submit" class="btn btn-form">Enviar mensaje</button>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Hola! Necesitaría saber el presupuesto para..."
+                        required></textarea>
+                    <button type="submit" class="btn btn-form"
+                        >Enviar mensaje</button
+                    >
                 </form>
             </div>
             <div class="success-container hidden" id="success-container">
-                <img src="/check_circle.png" class="success-icon">
-                <h2 class="success-title">Tu solicitud fue enviada con éxito</h2>
-                <p class="success-text">Recibirás un mail en los próximos días con la resolución de tu presupuesto</p>
+                <img src="/check_circle.png" class="success-icon" />
+                <h2 class="success-title">
+                    Tu solicitud fue enviada con éxito
+                </h2>
+                <p class="success-text">
+                    Recibirás un mail en los próximos días con la resolución de
+                    tu presupuesto
+                </p>
                 <a href="/" class="btn btn-form">Volver al inicio</a>
             </div>
         </div>
     </main>
 </Layout>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
 <script type="text/javascript">
-    (function() {
+    (function () {
         // https://dashboard.emailjs.com/admin/account
         emailjs.init({
-          publicKey: "nh0n8SRxdfzJxWhmE",
+            publicKey: "nh0n8SRxdfzJxWhmE",
         });
     })();
 </script>
 <script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('presupuesto-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+    window.onload = function () {
+        document
+            .getElementById("presupuesto-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
 
-    const templateParams = {
-        name: name,
-        email: email,
-        message: message
+                const templateParams = {
+                    name: name,
+                    email: email,
+                    message: message,
+                };
+                // these IDs from the previous steps
+                emailjs
+                    .sendForm("service_7sd5ero", "template_dyx6cuf", this)
+                    .then(
+                        () => {
+                            console.log("SUCCESS!");
+                            document
+                                .getElementById("form-container")
+                                .classList.add("hidden");
+                            document
+                                .getElementById("success-container")
+                                .classList.remove("hidden");
+                        },
+                        (error) => {
+                            console.log("FAILED...", error);
+                        },
+                    );
+            });
     };
-            // these IDs from the previous steps
-            emailjs.sendForm('service_7sd5ero', 'template_dyx6cuf', this)
-                .then(() => {
-                    console.log('SUCCESS!');
-                    document.getElementById('form-container').classList.add('hidden');
-        document.getElementById('success-container').classList.remove('hidden');
-                }, (error) => {
-                    console.log('FAILED...', error);
-                });
-        });
-    }
 </script>
 
-
 <style>
- #nav {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding: 20px; /* Espacio alrededor del contenido */
-}
+    #nav {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 20px; /* Espacio alrededor del contenido */
+    }
 
-body,
-main {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #262525;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
+    body,
+    main {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #262525;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.container {
-    padding: 0px 3%;
-}
+    .container {
+        padding: 0px 3%;
+    }
 
-.logo {
-    width: 5.8%;
-    height: 58%;
-    flex-shrink: 0;
-    display: absolute;
-    position: absolute;
-    top: 25%;
-    left: 0%;
-}
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+        background-color: #262525;
+    }
 
-.presupuesto-title {
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    color: #FFF;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 20px;
-}
+    .logo {
+        position: absolute;
+        width: 5.8%;
+        height: auto;
+        left: 0px;
+    }
 
-.btn-form
-{
-    width:15%;
-}
+    .presupuesto-title {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    padding: 20px;
-}
+    .btn-form {
+        width: 15%;
+    }
 
-.success-container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 20px;
+    }
 
-.presupuesto-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+    .success-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.input-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+    .presupuesto-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 30%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    background: transparent;
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 18px;
-}
+    .input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
 
-textarea {
-    height: 30vh;
-    width: 100%;
-    margin-bottom: 2%;
-}
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 30%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background: transparent;
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 18px;
+    }
 
-input::placeholder,
-textarea::placeholder {
-    color: #aaa;
-}
+    textarea {
+        height: 30vh;
+        width: 100%;
+        margin-bottom: 2%;
+    }
 
-.btn {
-    background-color: white;
-    color: black;
-}
+    input::placeholder,
+    textarea::placeholder {
+        color: #aaa;
+    }
 
-.btn:hover {
-    background-color: black;
-    border-color: black;
-    color: white !important;
-}
+    .btn {
+        background-color: white;
+        color: black;
+    }
 
-.hidden {
-    display: none;
-}
+    .btn:hover {
+        background-color: black;
+        border-color: black;
+        color: white !important;
+    }
 
-.success-icon {
-    width: 15vh;
-    margin-top: 10%;
-}
+    .hidden {
+        display: none;
+    }
 
-.success-title {
-    color: #FFF;
-font-family: "Apfel Grotezk";
-font-size: 50px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
+    .success-icon {
+        width: 15vh;
+        margin-top: 10%;
+    }
 
-.success-text {
-    width: 16em;
-    color: #FFF;
-text-align: center;
-font-family: "Apfel Grotezk";
-font-size: 35px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-margin-top: -2%;
-}
+    .success-title {
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 
-@media screen and (max-width: 1200) {
+    .success-text {
+        width: 16em;
+        color: #fff;
+        text-align: center;
+        font-family: "Apfel Grotezk";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: -2%;
+    }
 
-    .btn-form
-{
-    width:100%;
-}
+    @media screen and (max-width: 1200) {
+        .btn-form {
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            background-color: #262525;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-}
+        .hero-text {
+            margin: 0% 0% 10% 0%;
+            text-align: left;
+        }
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
+        .logo {
+            position: relative;
+            width: 15vh;
+            height: auto;
+            left: 0px;
+        }
+
+        #nav {
+            position: absolute;
+            left: 0;
+        }
+    }
 </style>

@@ -593,7 +593,7 @@ import Nav from "../components/Nav.astro";
                 fadeScrollContainer.classList.add("has-scroll-left");
             } else {
                 fadeScrollContainer.classList.remove("has-scroll-left");
-                
+
             }
             if (
                 scrollContainer.scrollLeft + scrollContainer.clientWidth <
@@ -622,7 +622,7 @@ import Nav from "../components/Nav.astro";
             )
                 return;
 
-            const scrollAmount = 200; // Adjust this value for scrolling speed
+            const scrollAmount = 600; // Adjust this value for scrolling speed
 
             leftArrow.addEventListener("click", () => {
                 scrollContainer.scrollBy({

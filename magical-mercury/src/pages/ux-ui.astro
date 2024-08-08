@@ -434,6 +434,13 @@ import Nav from "../components/Nav.astro";
     }
 
     @media only screen and (max-width: 1200px) {
+        .offering-arrow {
+            display: none;
+        }
+
+        .scroll-arrow {
+            display: none;
+        }
         .header {
             display: flex;
             align-items: center;
@@ -561,7 +568,7 @@ import Nav from "../components/Nav.astro";
             )
                 return;
 
-            const scrollAmount = 200; // Adjust this value for scrolling speed
+            const scrollAmount = 600; // Adjust this value for scrolling speed
 
             leftArrow.addEventListener("click", () => {
                 scrollContainer.scrollBy({
