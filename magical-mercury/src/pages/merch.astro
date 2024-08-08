@@ -6,12 +6,17 @@ import Nav from "../components/Nav.astro";
 <Layout title="For Artist">
     <main>
         <div class="container">
-            <div id="nav">
+            <div class="header">
                 <img class="logo" src="/logo.png" />
-                <Nav />
+                <div id="nav">
+                    <Nav />
+                </div>
             </div>
+            <div class="content-container">
+
             <h2 class="merch-tittle">Merch</h2>
             <p class="merch-text">Servicio de merch será introducido proximamente.</p>
+            </div>
         </div>
     </main>
 </Layout>
@@ -36,19 +41,26 @@ main {
     flex-direction: column;
 }
 
+.header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+        background-color: #262525;
+    }
+
+    .logo {
+        position: absolute;
+        width: 5.8%;
+        height: auto;
+        left: 0px;
+    }
+
 .container {
     padding: 0px 3%;
 }
 
-.logo {
-    width: 5.8%;
-    height: 58%;
-    flex-shrink: 0;
-    display: absolute;
-    position: absolute;
-    top: 25%;
-    left: 0%;
-}
 
 .merch-tittle
 {
@@ -75,5 +87,39 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
+@media only screen and (max-width: 1200px) {
+
+    .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            background-color: #262525;
+        }
+
+        .content-container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .logo {
+            position: relative;
+            width: 15vh;
+            height: auto;
+            left: 0px;
+        }
+
+        #nav {
+            position: absolute;
+            left: 0;
+        }
+
+}
+
 
 </style>

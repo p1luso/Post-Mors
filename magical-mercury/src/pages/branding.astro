@@ -6,10 +6,13 @@ import Nav from "../components/Nav.astro";
 <Layout title="Branding">
     <main>
         <div class="container">
-            <div id="nav">
+            <div class="header">
                 <img class="logo" src="/logo.png" />
-                <Nav />
+                <div id="nav">
+                    <Nav />
+                </div>
             </div>
+            <div class="content-container">
             <section class="hero">
                 <h1 class="hero-tittle">Branding</h1>
                 <p class="hero-text">
@@ -101,6 +104,7 @@ import Nav from "../components/Nav.astro";
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     </main>
 </Layout>
@@ -130,15 +134,21 @@ main {
     padding: 0px 3%;
 }
 
-.logo {
-    width: 5.8%;
-    height: 58%;
-    flex-shrink: 0;
-    display: absolute;
-    position: absolute;
-    top: 25%;
-    left: 0%;
-}
+.header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px;
+        background-color: #262525;
+    }
+
+    .logo {
+        position: absolute;
+        width: 5.8%;
+        height: auto;
+        left: 0px;
+    }
 
 .hero-tittle {
     color: #fff;
@@ -359,24 +369,92 @@ main {
     line-height: normal;
 }
 
-@media only screen and (max-width: 1280px) 
-{
-    .service
-    {
-        height:45vh;
+@media only screen and (max-width: 1280px) {
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            background-color: #262525;
+        }
+        .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
-    .branding-fuga {
-    width: 35em; /* Ajusta el ancho según tu imagen */
-}
+    .hero-text {
+        margin: 0% 0% 10% 0%;
+        text-align: left;
+    }
+        .content-container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-.branding-fuga2 {
-    width: 35em; /* Ajusta el ancho según tu imagen */
-}
-.branding-fuga2 {
-    width: 35em; /* Ajusta el ancho según tu imagen */
-}
-}
+        .logo {
+            position: relative;
+            width: 15vh;
+            height: auto;
+            left: 0px;
+        }
+
+        #nav {
+            position: absolute;
+            left: 0;
+        }
+
+        .services
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .service {
+           max-width: 35em;
+           margin-bottom: 20px; /* Añade margen inferior para separar los elementos */
+       }
+
+        .box-container-service {
+            display: flex;
+            gap: 20px; /* Espacio entre las cajas */
+            flex-direction: column;
+        }
+
+        .scroll-container
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offerings {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+   
+       .box-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+           width:100%;
+           align-items: center; /* Centra las cajas en pantallas pequeñas */
+       }
+        .box
+        {
+            width: 80%;
+        }
+    }
 
 
 </style>

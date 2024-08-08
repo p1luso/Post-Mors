@@ -6,10 +6,13 @@ import Nav from "../components/Nav.astro";
 <Layout title="For Artist">
     <main>
         <div class="container">
-            <div id="nav">
+            <div class="header">
                 <img class="logo" src="/logo.png" />
-                <Nav />
+                <div id="nav">
+                    <Nav />
+                </div>
             </div>
+            <div class="content-container">
             <section class="hero">
                 <h1 class="hero-tittle">For Artists</h1>
                 <p class="hero-text">
@@ -78,90 +81,95 @@ import Nav from "../components/Nav.astro";
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     </main>
 </Layout>
 <style>
- #nav {
+    #nav {
+       display: flex;
+       position: relative;
+       align-items: center;
+       justify-content: center;
+       padding: 20px;
+   }
+   
+   body,
+   main {
+       min-height: 100%;
+       margin: 0;
+       padding: 0;
+       background: #262525;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+   }
+   
+   .container {
+       padding: 0px 3%;
+   }
+   
+   .header {
     display: flex;
-    position: relative;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Espacio alrededor del contenido */
+    position: relative;
+    padding: 20px;
+    background-color: #262525;
 }
 
-body,
-main {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #262525;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.container {
-    padding: 0px 3%;
-}
-
-.logo {
-    width: 5.8%;
-    height: 58%;
-    flex-shrink: 0;
-    display: absolute;
-    position: absolute;
-    top: 25%;
-    left: 0%;
-}
-
-.hero-tittle {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.hero-text {
-    width: 62%;
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#hero-span {
-    font-weight: bold;
-}
-
-.services {
-    display: flex;
-    justify-content: start;
-    gap: 10px; /* Reduce el espacio entre los elementos */
-    padding: 20px 0;
-}
-
-.service {
-    text-align: center;
-    height: 35vh; /* Ajusta la altura según tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 10px;
-}
-
-.service-fuga-mediante {
+   .logo {
+        position: absolute;
+       width: 5.8%;
+       height: auto;
+       left: 0px;
+   }
+   
+   .hero-tittle {
+       color: #fff;
+       font-family: "Apfel Grotezk";
+       font-size: 50px;
+       font-weight: 700;
+   }
+   
+   .hero-text {
+       width: 62%;
+       color: #fff;
+       font-family: "Apfel Grotezk";
+       font-size: 50px;
+       font-weight: 400;
+   }
+   
+   #hero-span {
+       font-weight: bold;
+   }
+   
+   .services {
+       display: flex;
+       justify-content: start;
+       gap: 10px;
+       padding: 20px 0;
+       flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+   }
+   
+   .service {
+       text-align: center;
+       height: 35vh;
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: start;
+       color: white;
+       border-radius: 20px;
+       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+       padding: 10px;
+       box-sizing: border-box;
+   }
+   
+   .service-fuga-mediante {
     background-image: url("/fuga-mediante.png");
     width: 45em; /* Ajusta el ancho según tu imagen */
 }
@@ -171,147 +179,220 @@ main {
     width: 45em; /* Ajusta el ancho según tu imagen */
 }
 
-.services-titles {
-    font-family: "Neue Haas Grotesk Display Pro";
-    color: white;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 0 3.5%;
-}
-
-.buttons {
-    display: flex;
-    justify-content: start;
-    padding: 3.5%;
-}
-
-.btn {
-    color: white;
-    border-color: white;
-}
-
-.btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-}
-
-.box-container {
-    display: flex;
-    gap: 20px; /* Espacio entre las cajas */
-    flex-wrap: wrap; /* Permite que las cajas se envuelvan en varias líneas si es necesario */
-    justify-content: start;
-    width: 90%;
-    margin-bottom: 10%;
-}
-
-.box {
-    border-radius: 29px;
-    background-color: white;
-    width: 29%; /* Ajusta el ancho según tus necesidades */
-    flex-grow: 1;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el botón esté alineado correctamente */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Añade sombra para dar profundidad */
-}
-
-.box .btn {
-    color: black;
-    border-color: black;
-}
-
-.box-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el contenido esté alineado correctamente */
-    height: 100%; /* Asegura que el contenido llene toda la altura del contenedor */
-    padding: 0 5%;
-}
-
-.box-text {
-    color: black;
-    font-family: "ApfelGrotezkFett";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    flex-grow: 1; /* Permite que el texto crezca para llenar el espacio disponible */
-    margin-bottom: 20px; /* Añade margen inferior para separar el texto del botón */
-    margin-top: -3%;
-    margin-bottom: 10%;
+   
+   .services-titles {
+       font-family: "Neue Haas Grotesk Display Pro";
+       color: white;
+       font-size: 25px;
+       font-weight: 700;
+       padding: 0 3.5%;
+   }
+   
+   .buttons {
+       display: flex;
+       justify-content: start;
+       padding: 3.5%;
+   }
+   
+   .btn {
+       color: white;
+       border-color: white;
+   }
+   
+   .btn:hover {
+       transition: background-color 0.3s ease;
+       background-color: black;
+       color: white !important;
+   }
+   
+   .box-container {
+       display: flex;
+       gap: 20px;
+       flex-wrap: wrap;
+       justify-content: start;
+       width: 90%;
+       margin-bottom: 10%;
+   }
+   
+   .box {
+       border-radius: 29px;
+       background-color: white;
+       width: 29%;
+       flex-grow: 1;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   }
+   
+   .box .btn {
+       color: black;
+       border-color: black;
+   }
+   
+   .box-content {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       height: 100%;
+       padding: 0 5%;
+       box-sizing: border-box;
+   }
+   
+   .box-text {
+       color: black;
+       font-family: "ApfelGrotezkFett";
+       font-size: 1.8em; /* Usa unidades relativas para una mejor adaptabilidad */
+       font-weight: 500;
+       flex-grow: 1;
+       margin: 0 0 20px 0; /* Margen inferior para separar el texto del botón */
+   }
+   
+   .box-tittle {
+       color: black;
+       font-family: "ApfelGrotezkSatt";
+       font-size: 1.8em; /* Usa unidades relativas para una mejor adaptabilidad */
+       font-weight: 700;
+   }
+   
+   .complete-pack {
+       border-radius: 29px;
+       background: radial-gradient(
+           216.91% 103.24% at 97.78% 8.48%,
+           #b22a2a 0%,
+           #7271d1 100%
+       );
+   }
+   
+   .complete-pack .btn:hover {
+       transition: background-color 0.3s ease;
+       background-color: black;
+       color: white !important;
+       border-color: black;
+   }
+   
+   .complete-pack .box-text,
+   .complete-pack .box-tittle {
+       color: white;
+   }
+   
+   .complete-pack .btn {
+       color: white;
+       border-color: white;
+   }
+   
+   .buttons-offering {
+       padding: 1% 0 10% 0;
+   }
+   
+   .offering-title {
+       color: #fff;
+       font-family: "Apfel Grotezk";
+       font-size: 50px;
+       font-weight: 700;
+       margin-bottom: 20px;
+   }
+   
+   /* Estilos para pantallas más pequeñas */
+   @media only screen and (max-width: 1280px) {
     
-}
+        .header
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            background-color: #262525;
+        }
 
-.box-tittle {
-    color: black;
-    font-family: "ApfelGrotezkSatt";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+        .logo
+        {
+            position: relative;
+            width: 15vh;
+            height: auto;
+            left: 0px;
+        }
 
-.complete-pack {
-    border-radius: 29px;
-    background: radial-gradient(
-        216.91% 103.24% at 97.78% 8.48%,
-        #b22a2a 0%,
-        #7271d1 100%
-    );
-}
+        #nav
+        {
+            position: absolute;
+            left: 0;
+        }
 
-.complete-pack .btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-    border-color: black;
-}
+        .content-container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero-text
+        {
+            margin: 0% 0% 10% 0%;
+            text-align: left;
+        }
+
+       .services {
+           align-items: center; /* Alinea los elementos al centro */
+       }
+   
+       .service {
+           width: 100%; /* Asegura que las tarjetas de servicio se ajusten al ancho disponible */
+           max-width: 35em;
+           margin-bottom: 20px; /* Añade margen inferior para separar los elementos */
+       }
+   
+       .offerings {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+   
+       .box-container {
+        display: flex;
+        justify-content: center;
+           width:100%;
+           align-items: center; /* Centra las cajas en pantallas pequeñas */
+       }
+   
+       .box {
+           width: 80%; /* Ajusta el ancho para pantallas más pequeñas */
+           max-width: 500px; /* Establece un ancho máximo para evitar que las cajas se vuelvan demasiado grandes */
+       }
+   }
+   
+   @media only screen and (max-width: 768px) {
 
 
-.complete-pack .box-text, .complete-pack .box-tittle{
-    color: white;
-}
-
-.complete-pack .btn {
-    color: white;
-    border-color: white;
-}
-
-.buttons-offering {
-    padding: 1% 0 10% 0;
-}
-
-.offering-title {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 20px; /* Añade margen inferior para separar el título del contenido */
-}
-@media only screen and (max-width: 1280px) 
-{
-    .service
-    {
-        height:45vh;
-    }
-
-    .service-fuga-mediante {
-    width: 35em; /* Ajusta el ancho según tu imagen */
-}
-
-.service-vamos-pamos {
-    width: 35em; /* Ajusta el ancho según tu imagen */
-}
-
-}
-
-</style>
+       .hero-tittle {
+           font-size: 35px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+       }
+   
+       .hero-text {
+           font-size: 35px; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+           width: 80%; /* Asegura que el texto ocupe un ancho adecuado en pantallas pequeñas */
+       }
+   
+       .box-text,
+       .box-tittle {
+           font-size: 1.5em; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+       }
+   
+       .buttons-offering {
+           padding: 1% 0 5% 0; /* Ajusta el padding para pantallas más pequeñas */
+       }
+   }
+   </style>
 
 
 <script>
