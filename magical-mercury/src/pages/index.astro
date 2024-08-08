@@ -124,6 +124,12 @@ import Nav from "../components/Nav.astro";
                       <div class="loader hidden" id="loader"></div>
                     </div>
                   </form>
+                  <div id="confirmation-promptt" class="hidden">
+                    <div id="confirmation-prompt">
+                    <p>¡Tu solicitud fue enviada con éxito! Obtendrás una respuesta en tu casilla de mail.</p>
+                    <button class="close-btn" onclick="closePrompt()">X</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -516,6 +522,31 @@ import Nav from "../components/Nav.astro";
     animation: spin89345 1s linear infinite;
   }
 
+  #confirmation-prompt {
+  position: absolute;
+  bottom:5px;
+  left:-150px;
+  display:flex;
+  flex-direction: row;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 35vh;
+}
+
+.close-btn {
+  
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
   @keyframes spin89345 {
     0% {
       transform: rotate(0deg);
@@ -833,10 +864,14 @@ import Nav from "../components/Nav.astro";
   })();
 </script>
 <script type="text/javascript">
-  window.onload = function () {
+ function closePrompt() {
+  document.getElementById("confirmation-promptt").classList.add("hidden");
+}
+ window.onload = function () {
     const form = document.getElementById("landing-form");
     const submitButton = document.getElementById("submit-button"); // Asegúrate de tener un id para el botón de envío
     const loader = document.getElementById("loader");
+    const confirmationPrompt = document.getElementById("confirmation-promptt"); // Nuevo: referencia al prompt de confirmación
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -858,7 +893,8 @@ import Nav from "../components/Nav.astro";
         .then(
           () => {
             console.log("SUCCESS!");
-            alert("El mensaje ha sido enviado exitosamente.");
+            // Mostrar el prompt de confirmación
+            confirmationPrompt.classList.remove("hidden");
 
             // Limpiar el formulario
             form.reset();
@@ -874,10 +910,14 @@ import Nav from "../components/Nav.astro";
           // Habilitar el botón de envío nuevamente
           submitButton.disabled = false;
           loader.classList.add("hidden");
+
+          // Ocultar el formulario si es necesario
+          form.classList.add("hidden");
         });
     });
   };
 </script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

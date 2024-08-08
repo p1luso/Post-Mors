@@ -1,6 +1,7 @@
 ---
 console.log("Javascript");
 ---
+
 <nav class="navbar">
     <div class="navbar-brand">
         <ul class="navbar-navigation">
@@ -23,17 +24,21 @@ console.log("Javascript");
     </div>
     <div id="nav">
         <div class="hamburger-menu" id="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
         <div class="dropdown-menu" id="dropdown-menu">
             <a href="/" class="dropdown-link" id="dropdown-inicio">Inicio</a>
-            <a href="/forArtist" class="dropdown-link" id="dropdown-for-artists">For Artists</a>
-            <a href="/branding" class="dropdown-link" id="dropdown-branding">Branding</a>
+            <a href="/forArtist" class="dropdown-link" id="dropdown-for-artists"
+                >For Artists</a
+            >
+            <a href="/branding" class="dropdown-link" id="dropdown-branding"
+                >Branding</a
+            >
             <a href="/ux-ui" class="dropdown-link" id="dropdown-ux-ui">UX/UI</a>
             <a href="/merch" class="dropdown-link" id="dropdown-merch">Merch</a>
-            <a href="#contacto" class="dropdown-link" id="contact-btn">Contacto</a>
+            
         </div>
     </div>
 </nav>
@@ -69,11 +74,12 @@ console.log("Javascript");
     }
 
     .navbar-hip {
-        color: white;
-        text-decoration: none;
-        padding: 1.5vh 2vw;
-        display: block;
-    }
+    color: white;
+    text-decoration: none;
+    padding: 1.5vh 2vw;
+    display: block;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
 
     .navbar-hip.active {
         color: black;
@@ -81,29 +87,12 @@ console.log("Javascript");
         border-radius: 1vh;
     }
 
-    .navbar-list.active .navbar-hip {
-        color: black;
-        background: #fff;
-        border-radius: 1vh;
-    }
-
-    .hamburger-menu {
-        display: none; /* Oculto por defecto */
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px; /* Tamaño fijo en píxeles */
-        height: 20px; /* Tamaño fijo en píxeles */
-        cursor: pointer;
-        transition: all 0.3 ease-in-out;
-    }
-
-    .bar {
-        width: 100%;
-    height: 3px; /* Tamaño fijo en píxeles */
-        background-color: #fff;
-        transition: 0.3s;
-    }
-
+    .navbar-hip.active,
+.navbar-hip:hover {
+    color: black;
+    background: #fff;
+    border-radius: 1vh;
+}
     .dropdown-menu {
         display: none; /* Oculto por defecto */
         flex-direction: column;
@@ -118,17 +107,18 @@ console.log("Javascript");
     }
 
     .dropdown-link {
-        margin: 0.5vh 0;
-        padding: 5%;
-        color: #fff;
-        text-decoration: none;
-        font-family: "ApfelGrotezkMittel";
-        font-size: 1.6vh;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-align: center;
-    }
+    margin: 0.5vh 0;
+    padding: 5%;
+    color: #fff;
+    text-decoration: none;
+    font-family: "ApfelGrotezkMittel";
+    font-size: 1.6vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
 
     .dropdown-link:hover {
         color: black;
@@ -140,17 +130,46 @@ console.log("Javascript");
         display: flex; /* Mostrar el menú cuando esté activo */
     }
 
-    .navbar-hip.active,
-    .dropdown-link.active {
-        color: black;
-        background: #fff;
-        border-radius: 1vh;
-    }
+    .dropdown-link.active,
+.dropdown-link:hover {
+    color: black;
+    background: #fff;
+    border-radius: 1vh;
+}
 
-    @media only screen and (max-width:1200px)
-    {
+    .hamburger-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Tamaño fijo en píxeles */
+    height: 24px; /* Tamaño fijo en píxeles */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
-        .hamburger-menu {
+.hamburger-menu span {
+    width: 100%;
+    height: 2px; /* Tamaño fijo en píxeles */
+    background-color: #fff;
+    transition: transform 0.3s, opacity 0.3s; /* Asegura que todas las transformaciones sean suaves */
+}
+
+/* Transformaciones de la "X" */
+.hamburger-menu.active span:first-child {
+    transform: rotate(45deg) translate(10px, 5px); /* Ajuste de la traducción */
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Desaparece la barra del medio */
+}
+
+.hamburger-menu.active span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px); /* Ajuste de la traducción */
+}
+
+/* Mostrar el menú hamburguesa en pantallas más pequeñas */
+@media only screen and (max-width: 1200px) {
+    .hamburger-menu {
         display: flex;
     }
 
@@ -158,94 +177,87 @@ console.log("Javascript");
         display: none;
     }
 
-        .navbar-list
-        {
-            font-size:3vh
-        }
-        .ls-buttons {
-            display: none;
-        }
-
-        #nav {
-            display: flex;
-            position: absolute;
-            top: 25%;
-            left: 5%;
-        }
-
-        .dropdown-menu {
-            display: none;
-        }
-
-        .navbar-brand {
-            display: none;
-        }
-    
-
-    .hamburger-menu.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Ajuste para asegurar que la "X" esté alineada */
-.hamburger-menu.active .bar:nth-child(1),
-.hamburger-menu.active .bar:nth-child(3) {
-    transform-origin: center;
-}
+    #nav {
+        display: flex;
+        position: absolute;
+        top: 25%;
+        left: 5%;
     }
 
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: flex;
+    }
+}
 </style>
 
 <script>
     const hamburgerMenu = document.getElementById("hamburger-menu");
     const dropdownMenu = document.getElementById("dropdown-menu");
-    
+
     if (hamburgerMenu && dropdownMenu) {
         hamburgerMenu.addEventListener("click", () => {
             hamburgerMenu.classList.toggle("active");
             dropdownMenu.classList.toggle("show");
         });
     }
-    
+
     document.addEventListener("DOMContentLoaded", () => {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll(".navbar-hip");
-        const dropdownLinks = document.querySelectorAll(".dropdown-link");
-        let activeLink: HTMLElement | null = null;
-        let activeDropdownLink: HTMLElement | null = null;
-        
-        navLinks.forEach((link) => {
-            if (link.getAttribute("href") === currentPath) {
-                link.classList.add("active");
-                activeLink = link as HTMLElement;
-            }
-        
-            link.addEventListener("click", () => {
-                if (activeLink) activeLink.classList.remove("active");
-                link.classList.add("active");
-                activeLink = link as HTMLElement;
-            });
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll(".navbar-hip");
+    const dropdownLinks = document.querySelectorAll(".dropdown-link");
+    let activeLink: Element | null = null;
+    let activeDropdownLink: Element | null = null;
+
+    // Set active link based on the current path
+    navLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active");
+            activeLink = link;
+        }
+
+        // Handle hover effect
+        link.addEventListener("mouseenter", () => {
+            if (activeLink) activeLink.classList.remove("active");
         });
-        
-        dropdownLinks.forEach((link) => {
-            if (link.getAttribute("href") === currentPath) {
-                link.classList.add("active");
-                activeDropdownLink = link as HTMLElement;
-            }
-        
-            link.addEventListener("click", () => {
-                if (activeDropdownLink)
-                    activeDropdownLink.classList.remove("active");
-                link.classList.add("active");
-                activeDropdownLink = link as HTMLElement;
-            });
+
+        link.addEventListener("mouseleave", () => {
+            if (activeLink) activeLink.classList.add("active");
+        });
+
+        // Handle click event to update the active link
+        link.addEventListener("click", () => {
+            if (activeLink) activeLink.classList.remove("active");
+            link.classList.add("active");
+            activeLink = link;
         });
     });
+
+    // Set active dropdown link based on the current path
+    dropdownLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active");
+            activeDropdownLink = link;
+        }
+
+        // Handle hover effect for dropdown links
+        link.addEventListener("mouseenter", () => {
+            if (activeDropdownLink) activeDropdownLink.classList.remove("active");
+        });
+
+        link.addEventListener("mouseleave", () => {
+            if (activeDropdownLink) activeDropdownLink.classList.add("active");
+        });
+
+        // Handle click event to update the active dropdown link
+        link.addEventListener("click", () => {
+            if (activeDropdownLink) activeDropdownLink.classList.remove("active");
+            link.classList.add("active");
+            activeDropdownLink = link;
+        });
+    });
+});
 </script>
