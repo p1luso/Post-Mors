@@ -13,128 +13,187 @@ import Nav from "../components/Nav.astro";
                 </div>
             </div>
             <div class="content-container">
-            <section class="hero">
-                <h1 class="hero-tittle">Branding</h1>
-                <p class="hero-text">
-                    Construcción de Roll-Outs, merch, artes de tapa, visuales y
-                    estética para <span id="hero-span">artistas argentinos</span
-                    >.
-                </p>
-            </section>
+                <section class="hero">
+                    <h1 class="hero-tittle">Branding</h1>
+                    <p class="hero-text">
+                        Construcción de Roll-Outs, merch, artes de tapa,
+                        visuales y estética para <span id="hero-span"
+                            >artistas argentinos</span
+                        >.
+                    </p>
+                </section>
 
-            <section class="services fade-scroll-container">
-                <div class="scroll-container" id="services-scroll-container">
-                    <div class="box-container-service">
-                        <div class="service branding-fuga">
-                            <h2 class="services-titles">Mkit</h2>
-                            <div class="buttons">
-                                <a href="" class="btn btn-presupuesto">Ver trabajo</a>
-                            </div>
+                <section class="services fade-scroll-container">
+                    <div
+                        class="scroll-container"
+                        id="services-scroll-container"
+                    >
+                        <!-- Asegúrate de tener esta estructura en tu HTML para las flechas -->
+                        <div
+                            class="scroll-arrow left-arrow"
+                            id="services-scroll-left"
+                        >
+                            <div class="arrow">❮</div>
                         </div>
-                        <div class="service branding-fuga2">
-                            <h2 class="services-titles">MACBA</h2>
-                            <div class="buttons">
-                                <a href="" class="btn btn-presupuesto">Ver trabajo</a>
-                            </div>
+                        <div
+                            class="scroll-arrow right-arrow"
+                            id="services-scroll-right"
+                        >
+                            <div class="arrow">❯</div>
                         </div>
-                        <div class="service branding-fuga3">
-                            <h2 class="services-titles">MACN</h2>
-                            <div class="buttons">
-                                <a href="" class="btn btn-presupuesto">Ver trabajo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="offerings">
-                <h2 class="offering-title">Que ofrecemos</h2>
-                <div class="fade-scroll-container">
-                    <div class="scroll-container" id="offerings-scroll-container">
-                        <div class="box-container">
-                            <div class="box">
-                                <div class="box-content complete-pack">
-                                    <h1 class="box-tittle">Pack Completo</h1>
-                                    <p class="box-text">
-                                        Arte de tapa, Flyers para redes, visuales,
-                                        merch, Spotify Canvas.
-                                    </p>
-                                    <div class="buttons-offering">
-                                        <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-                                    </div>
+                        <div class="box-container-service">
+                            <div class="service branding-fuga">
+                                <h2 class="services-titles">Mkit</h2>
+                                <div class="buttons">
+                                    <a href="" class="btn btn-presupuesto"
+                                        >Ver trabajo</a
+                                    >
                                 </div>
                             </div>
-                            <div class="box">
-                                <div class="box-content">
-                                    <h1 class="box-tittle">Arte de Tapa</h1>
-                                    <p class="box-text">
-                                        Distintas variaciones para la portada de tu
-                                        single, EP o LP.
-                                    </p>
-                                    <div class="buttons-offering">
-                                        <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-                                    </div>
+                            <div class="service branding-fuga2">
+                                <h2 class="services-titles">MACBA</h2>
+                                <div class="buttons">
+                                    <a href="" class="btn btn-presupuesto"
+                                        >Ver trabajo</a
+                                    >
                                 </div>
                             </div>
-                            <div class="box">
-                                <div class="box-content">
-                                    <h1 class="box-tittle">Roll-Out</h1>
-                                    <p class="box-text">
-                                        Realizamos únicamente piezas gráficas para redes
-                                        sociales a partir de tu arte de tapa ya
-                                        existente.
-                                    </p>
-                                    <div class="buttons-offering">
-                                        <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="box-content">
-                                    <h1 class="box-tittle">Signo / Logotipo</h1>
-                                    <p class="box-text">
-                                        Realizamos unicamente tu signo o logotipo
-                                    </p>
-                                    <div class="buttons-offering">
-                                        <a href="/presupuesto" class="btn btn-presupuesto">Pedir presupuesto</a>
-                                    </div>
+                            <div class="service branding-fuga3">
+                                <h2 class="services-titles">MACN</h2>
+                                <div class="buttons">
+                                    <a href="" class="btn btn-presupuesto"
+                                        >Ver trabajo</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <section class="offerings">
+                    <h2 class="offering-title">Que ofrecemos</h2>
+                    <div class="fade-scroll-container">
+                        <div
+                            class="scroll-container"
+                            id="offerings-scroll-container"
+                        >
+                            <div class="box-container">
+                                <div
+                                    class="offering-arrow left-arrow"
+                                    id="offerings-scroll-left"
+                                >
+                                    <div class="off-arrow">❮</div>
+                                </div>
+                                <div
+                                    class="offering-arrow right-arrow"
+                                    id="offerings-scroll-right"
+                                >
+                                    <div class="off-arrow">❯</div>
+                                </div>
+                                <div class="box">
+                                    <div class="box-content complete-pack">
+                                        <h1 class="box-tittle">
+                                            Pack Completo
+                                        </h1>
+                                        <p class="box-text">
+                                            Arte de tapa, Flyers para redes,
+                                            visuales, merch, Spotify Canvas.
+                                        </p>
+                                        <div class="buttons-offering">
+                                            <a
+                                                href="/presupuesto"
+                                                class="btn btn-presupuesto"
+                                                >Pedir presupuesto</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="box-content">
+                                        <h1 class="box-tittle">Arte de Tapa</h1>
+                                        <p class="box-text">
+                                            Distintas variaciones para la
+                                            portada de tu single, EP o LP.
+                                        </p>
+                                        <div class="buttons-offering">
+                                            <a
+                                                href="/presupuesto"
+                                                class="btn btn-presupuesto"
+                                                >Pedir presupuesto</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="box-content">
+                                        <h1 class="box-tittle">Roll-Out</h1>
+                                        <p class="box-text">
+                                            Realizamos únicamente piezas
+                                            gráficas para redes sociales a
+                                            partir de tu arte de tapa ya
+                                            existente.
+                                        </p>
+                                        <div class="buttons-offering">
+                                            <a
+                                                href="/presupuesto"
+                                                class="btn btn-presupuesto"
+                                                >Pedir presupuesto</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="box-content">
+                                        <h1 class="box-tittle">
+                                            Signo / Logotipo
+                                        </h1>
+                                        <p class="box-text">
+                                            Realizamos unicamente tu signo o
+                                            logotipo
+                                        </p>
+                                        <div class="buttons-offering">
+                                            <a
+                                                href="/presupuesto"
+                                                class="btn btn-presupuesto"
+                                                >Pedir presupuesto</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
 </Layout>
 
-
 <style>
-#nav {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding: 20px; /* Espacio alrededor del contenido */
-}
+    #nav {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 20px; /* Espacio alrededor del contenido */
+    }
 
-body,
-main {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #262525;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
+    body,
+    main {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #262525;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.container {
-    padding: 0px 3%;
-}
+    .container {
+        padding: 0px 3%;
+    }
 
-.header {
+    .header {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -150,226 +209,297 @@ main {
         left: 0px;
     }
 
-.hero-tittle {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+    .hero-tittle {
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 
-.hero-text {
-    width: 62%;
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+    .hero-text {
+        width: 62%;
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 
-#hero-span {
-    font-weight: bold;
-}
+    #hero-span {
+        font-weight: bold;
+    }
 
-.services {
-    display: flex;
-    justify-content: start;
-    gap: 10px; /* Reduce el espacio entre los elementos */
-}
-.box-container-service {
-    display: flex;
-    gap: 20px; /* Espacio entre las cajas */
-    flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
-}
+    .services {
+        display: flex;
+        justify-content: start;
+        gap: 10px; /* Reduce el espacio entre los elementos */
+    }
+    .box-container-service {
+        display: flex;
+        gap: 20px; /* Espacio entre las cajas */
+        flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
+    }
 
-.service {
-    text-align: center;
-    height: 35vh; /* Ajusta la altura según tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 10px;
-}
+    .service {
+        text-align: center;
+        height: 35vh; /* Ajusta la altura según tu imagen */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        color: white;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+    }
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        background-color: #ffffff; /* Color de relleno */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        cursor: pointer;
+        z-index: 1; /* Asegura que el botón esté por encima del contenido */
+        user-select: none; /* Evita la selección del texto dentro del botón */
+    }
+    .scroll-arrow .arrow {
+        font-size: 24px;
+        color: #000000; /* Color de la flecha */
+        user-select: none; /* Evita la selección del texto de la flecha */
+    }
+    .left-arrow {
+        left: 10px;
+    }
 
-.branding-fuga {
-    background-image: url("/branding-fuga.png");
-    width: 45em; /* Ajusta el ancho según tu imagen */
-}
+    .right-arrow {
+        right: 10px;
+    }
 
-.branding-fuga2 {
-    background-image: url("/branding-fuga2.png");
-    width: 45em; /* Ajusta el ancho según tu imagen */
-}
-.branding-fuga3 {
-    background-image: url("/branding-fuga3.png");
-    width: 45em; /* Ajusta el ancho según tu imagen */
-}
+    .scroll-arrow .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.services-titles {
-    font-family: "Neue Haas Grotesk Display Pro";
-    color: white;
-    font-size: 3vh;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 0 3.5%;
-}
+    .offering-arrow {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 30%;
+        width: 60px;
+        height: 60px;
+        background-color: black; /* Color de relleno */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        cursor: pointer;
+        z-index: 1; /* Asegura que el botón esté por encima del contenido */
+        user-select: none; /* Evita la selección del texto dentro del botón */
+    }
+    .offering-arrow .off-arrow {
+        font-size: 24px;
+        color: white; /* Color de la flecha */
+        user-select: none; /* Evita la selección del texto de la flecha */
+    }
+    .offering-arrow.left-arrow {
+        left: 10px;
+    }
+    .offering-arrow.right-arrow {
+        right: 10px;
+    }
+    .branding-fuga {
+        background-image: url("/branding-fuga.png");
+        width: 45em; /* Ajusta el ancho según tu imagen */
+    }
 
-.buttons {
-    display: flex;
-    justify-content: start;
-    padding: 3.5%;
-}
+    .branding-fuga2 {
+        background-image: url("/branding-fuga2.png");
+        width: 45em; /* Ajusta el ancho según tu imagen */
+    }
+    .branding-fuga3 {
+        background-image: url("/branding-fuga3.png");
+        width: 45em; /* Ajusta el ancho según tu imagen */
+    }
 
-.btn {
-    color: white;
-    border-color: white;
-}
+    .services-titles {
+        font-family: "Neue Haas Grotesk Display Pro";
+        color: white;
+        font-size: 3vh;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0 3.5%;
+    }
 
-.btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-}
+    .buttons {
+        display: flex;
+        justify-content: start;
+        padding: 3.5%;
+    }
 
-.fade-scroll-container {
-    position: relative;
-}
+    .btn {
+        color: white;
+        border-color: white;
+    }
 
-.scroll-container {
-    display: flex;
-    overflow-x: scroll; /* Cambia de auto a scroll */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
+    .btn:hover {
+        transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
+        background-color: black; /* Cambia el color de fondo a negro */
+        color: white !important; /* Forza el cambio de color del texto a blanco */
+    }
 
-.scroll-container::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
+    .fade-scroll-container {
+        position: relative;
+    }
 
-.fade-scroll-container::before, .fade-scroll-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px; /* Ajusta el ancho del fade */
-    pointer-events: none;
-    background: linear-gradient(to right, #262525, transparent);
-    display: none; /* Por defecto, no se muestra */
-}
+    .scroll-container {
+        display: flex;
+        overflow-x: scroll; /* Cambia de auto a scroll */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
 
-.fade-scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, #262525, transparent);
-}
+    .scroll-container::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
 
-.fade-scroll-container.has-scroll-left::before,
-.fade-scroll-container.has-scroll-right::after {
-    display: block; /* Mostrar cuando haya scroll */
-}
+    .fade-scroll-container::before,
+    .fade-scroll-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px; /* Ajusta el ancho del fade */
+        pointer-events: none;
+        background: linear-gradient(to right, #262525, transparent);
+        display: none; /* Por defecto, no se muestra */
+    }
 
-.box-container {
-    display: flex;
-    gap: 20px; /* Espacio entre las cajas */
-    flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
-    margin-bottom: 10%;
-}
+    .fade-scroll-container::after {
+        right: 0;
+        background: linear-gradient(to left, #262525, transparent);
+    }
 
-.box {
-    border-radius: 29px;
-    background-color: white;
-    width: 29%; /* Ajusta el ancho según tus necesidades */
-    flex-grow: 1;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el botón esté alineado correctamente */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Añade sombra para dar profundidad */
-}
+    .fade-scroll-container.has-scroll-left::before,
+    .fade-scroll-container.has-scroll-right::after {
+        display: block; /* Mostrar cuando haya scroll */
+    }
 
-.box .btn {
-    color: black;
-    border-color: black;
-}
+    .box-container {
+        display: flex;
+        gap: 20px; /* Espacio entre las cajas */
+        flex-wrap: nowrap; /* Permite que las cajas no se envuelvan en varias líneas */
+        margin-bottom: 10%;
+    }
 
-.box-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Asegura que el contenido esté alineado correctamente */
-    height: 100%; /* Asegura que el contenido llene toda la altura del contenedor */
-    padding: 0 5%;
-}
+    .box {
+        border-radius: 29px;
+        background-color: white;
+        width: 29%; /* Ajusta el ancho según tus necesidades */
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Asegura que el botón esté alineado correctamente */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Añade sombra para dar profundidad */
+    }
 
-.box-text {
-    color: black;
-    font-family: "ApfelGrotezkFett";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    flex-grow: 1; /* Permite que el texto crezca para llenar el espacio disponible */
-    margin-bottom: 20px; /* Añade margen inferior para separar el texto del botón */
-    margin-top: -3%;
-    margin-bottom: 10%;
-}
+    .box .btn {
+        color: black;
+        border-color: black;
+    }
 
-.box-tittle {
-    color: black;
-    font-family: "ApfelGrotezkSatt";
-    font-size: 28.602px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Asegura que el contenido esté alineado correctamente */
+        height: 100%; /* Asegura que el contenido llene toda la altura del contenedor */
+        padding: 0 5%;
+    }
 
-.complete-pack {
-    border-radius: 29px;
-    background: radial-gradient(
-        216.91% 103.24% at 97.78% 8.48%,
-        #b22a2a 0%,
-        #7271d1 100%
-    );
-}
+    .box-text {
+        color: black;
+        font-family: "ApfelGrotezkFett";
+        font-size: 28.602px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        flex-grow: 1; /* Permite que el texto crezca para llenar el espacio disponible */
+        margin-bottom: 20px; /* Añade margen inferior para separar el texto del botón */
+        margin-top: -3%;
+        margin-bottom: 10%;
+    }
 
-.complete-pack .btn:hover {
-    transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
-    background-color: black; /* Cambia el color de fondo a negro */
-    color: white !important; /* Forza el cambio de color del texto a blanco */
-    border-color: black;
-}
+    .box-tittle {
+        color: black;
+        font-family: "ApfelGrotezkSatt";
+        font-size: 28.602px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 
-.complete-pack .box-text, .complete-pack .box-tittle {
-    color: white;
-}
+    .complete-pack {
+        border-radius: 29px;
+        background: radial-gradient(
+            216.91% 103.24% at 97.78% 8.48%,
+            #b22a2a 0%,
+            #7271d1 100%
+        );
+    }
 
-.complete-pack .btn {
-    color: white;
-    border-color: white;
-}
+    .complete-pack .btn:hover {
+        transition: background-color 0.3s ease; /* Ajusta la transición para que solo afecte al color de fondo */
+        background-color: black; /* Cambia el color de fondo a negro */
+        color: white !important; /* Forza el cambio de color del texto a blanco */
+        border-color: black;
+    }
 
-.buttons-offering {
-    padding: 1% 0 10% 0;
-}
+    .complete-pack .box-text,
+    .complete-pack .box-tittle {
+        color: white;
+    }
 
-.offering-title {
-    color: #fff;
-    font-family: "Apfel Grotezk";
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+    .complete-pack .btn {
+        color: white;
+        border-color: white;
+    }
 
-@media only screen and (max-width: 1280px) {
+    .buttons-offering {
+        padding: 1% 0 10% 0;
+    }
+
+    .offering-title {
+        color: #fff;
+        font-family: "Apfel Grotezk";
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .offering-arrow {
+            display: none;
+        }
+
+        .scroll-arrow {
+            display: none;
+        }
+
         .header {
             display: flex;
             align-items: center;
@@ -379,18 +509,17 @@ main {
             background-color: #262525;
         }
         .hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    .hero-text {
-        margin: 0% 0% 10% 0%;
-        text-align: left;
-    }
-        .content-container
-        {
+        .hero-text {
+            margin: 0% 0% 10% 0%;
+            text-align: left;
+        }
+        .content-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -409,8 +538,7 @@ main {
             left: 0;
         }
 
-        .services
-        {
+        .services {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -418,9 +546,9 @@ main {
         }
 
         .service {
-           max-width: 35em;
-           margin-bottom: 20px; /* Añade margen inferior para separar los elementos */
-       }
+            max-width: 35em;
+            margin-bottom: 20px; /* Añade margen inferior para separar los elementos */
+        }
 
         .box-container-service {
             display: flex;
@@ -428,8 +556,7 @@ main {
             flex-direction: column;
         }
 
-        .scroll-container
-        {
+        .scroll-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -438,54 +565,97 @@ main {
         }
 
         .offerings {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-       }
-   
-       .box-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-           width:100%;
-           align-items: center; /* Centra las cajas en pantallas pequeñas */
-       }
-        .box
-        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            align-items: center; /* Centra las cajas en pantallas pequeñas */
+        }
+        .box {
             width: 80%;
         }
     }
-
-
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const checkScroll = (scrollContainer: HTMLElement, fadeScrollContainer: HTMLElement) => {
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkScroll = (
+            scrollContainer: HTMLElement,
+            fadeScrollContainer: HTMLElement,
+        ) => {
             if (scrollContainer.scrollLeft > 0) {
-                fadeScrollContainer.classList.add('has-scroll-left');
+                fadeScrollContainer.classList.add("has-scroll-left");
             } else {
-                fadeScrollContainer.classList.remove('has-scroll-left');
+                fadeScrollContainer.classList.remove("has-scroll-left");
+                
             }
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth) {
-                fadeScrollContainer.classList.add('has-scroll-right');
+            if (
+                scrollContainer.scrollLeft + scrollContainer.clientWidth <
+                scrollContainer.scrollWidth
+            ) {
+                fadeScrollContainer.classList.add("has-scroll-right");
             } else {
-                fadeScrollContainer.classList.remove('has-scroll-right');
+                fadeScrollContainer.classList.remove("has-scroll-right");
             }
         };
-    
-        const initScrollFade = (containerId: string) => {
+
+        const initScrollFade = (
+            containerId: string,
+            leftArrowId: string,
+            rightArrowId: string,
+        ) => {
             const scrollContainer = document.getElementById(containerId);
-            const fadeScrollContainer = scrollContainer?.parentElement as HTMLElement;
-            if (!scrollContainer || !fadeScrollContainer) return;
-    
-            scrollContainer.addEventListener('scroll', () => checkScroll(scrollContainer, fadeScrollContainer));
-            window.addEventListener('resize', () => checkScroll(scrollContainer, fadeScrollContainer));
+            const fadeScrollContainer = scrollContainer?.parentElement;
+            const leftArrow = document.getElementById(leftArrowId);
+            const rightArrow = document.getElementById(rightArrowId);
+            if (
+                !scrollContainer ||
+                !fadeScrollContainer ||
+                !leftArrow ||
+                !rightArrow
+            )
+                return;
+
+            const scrollAmount = 200; // Adjust this value for scrolling speed
+
+            leftArrow.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: "smooth",
+                });
+            });
+
+            rightArrow.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: "smooth",
+                });
+            });
+
+            scrollContainer.addEventListener("scroll", () =>
+                checkScroll(scrollContainer, fadeScrollContainer),
+            );
+            window.addEventListener("resize", () =>
+                checkScroll(scrollContainer, fadeScrollContainer),
+            );
             checkScroll(scrollContainer, fadeScrollContainer); // Initial check
         };
-    
-        initScrollFade('services-scroll-container');
-        initScrollFade('offerings-scroll-container');
+
+        initScrollFade(
+            "services-scroll-container",
+            "services-scroll-left",
+            "services-scroll-right",
+        );
+        initScrollFade(
+            "offerings-scroll-container",
+            "offerings-scroll-left",
+            "offerings-scroll-right",
+        );
     });
-    </script>
-    
+</script>

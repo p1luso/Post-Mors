@@ -58,6 +58,18 @@ import Nav from "../components/Nav.astro";
                         id="offerings-scroll-container"
                     >
                         <div class="box-container">
+                            <div
+                            class="offering-arrow left-arrow"
+                            id="offerings-scroll-left"
+                        >
+                            <div class="off-arrow">❮</div>
+                        </div>
+                        <div
+                            class="offering-arrow right-arrow"
+                            id="offerings-scroll-right"
+                        >
+                            <div class="off-arrow">❯</div>
+                        </div>
                             <div class="box">
                                 <div class="box-content complete-pack">
                                     <h1 class="box-tittle">Pack Completo</h1>
@@ -244,7 +256,33 @@ import Nav from "../components/Nav.astro";
         z-index: 1; /* Asegura que el título esté por encima del video */
     }
 
-    
+    .offering-arrow {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 30%;
+        width: 60px;
+        height: 60px;
+        background-color: black; /* Color de relleno */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        cursor: pointer;
+        z-index: 1; /* Asegura que el botón esté por encima del contenido */
+        user-select: none; /* Evita la selección del texto dentro del botón */
+    }
+    .offering-arrow .off-arrow {
+        font-size: 24px;
+        color: white; /* Color de la flecha */
+        user-select: none; /* Evita la selección del texto de la flecha */
+    }
+    .offering-arrow.left-arrow {
+        left: 10px;
+    }
+    .offering-arrow.right-arrow {
+        right: 10px;
+    }
 
     .buttons {
         display: flex;
@@ -395,7 +433,7 @@ import Nav from "../components/Nav.astro";
         line-height: normal;
     }
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: 1200px) {
         .header {
             display: flex;
             align-items: center;
@@ -506,11 +544,38 @@ import Nav from "../components/Nav.astro";
             }
         };
 
-        const initScrollFade = (containerId: string) => {
+        const initScrollFade = (
+            containerId: string,
+            leftArrowId: string,
+            rightArrowId: string,
+        ) => {
             const scrollContainer = document.getElementById(containerId);
-            const fadeScrollContainer =
-                scrollContainer?.parentElement as HTMLElement;
-            if (!scrollContainer || !fadeScrollContainer) return;
+            const fadeScrollContainer = scrollContainer?.parentElement;
+            const leftArrow = document.getElementById(leftArrowId);
+            const rightArrow = document.getElementById(rightArrowId);
+            if (
+                !scrollContainer ||
+                !fadeScrollContainer ||
+                !leftArrow ||
+                !rightArrow
+            )
+                return;
+
+            const scrollAmount = 200; // Adjust this value for scrolling speed
+
+            leftArrow.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: "smooth",
+                });
+            });
+
+            rightArrow.addEventListener("click", () => {
+                scrollContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: "smooth",
+                });
+            });
 
             scrollContainer.addEventListener("scroll", () =>
                 checkScroll(scrollContainer, fadeScrollContainer),
@@ -521,7 +586,15 @@ import Nav from "../components/Nav.astro";
             checkScroll(scrollContainer, fadeScrollContainer); // Initial check
         };
 
-        initScrollFade("services-scroll-container");
-        initScrollFade("offerings-scroll-container");
+        initScrollFade(
+            "services-scroll-container",
+            "services-scroll-left",
+            "services-scroll-right",
+        );
+        initScrollFade(
+            "offerings-scroll-container",
+            "offerings-scroll-left",
+            "offerings-scroll-right",
+        );
     });
 </script>
