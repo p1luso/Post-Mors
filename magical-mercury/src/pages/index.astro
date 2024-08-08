@@ -883,31 +883,34 @@ import Nav from "../components/Nav.astro";
   document.addEventListener("DOMContentLoaded", function () {
     const contactBtn = document.getElementById("contact-btn");
     const contactFormContainer = document.getElementById("contact");
-
+  
     // Mostrar la sección de contacto y resaltar el botón al cargar la página
     if (contactBtn && contactFormContainer) {
       contactFormContainer.classList.remove("hidden");
       contactBtn.classList.add("active");
     }
-
+  
     // Manejar clics en los botones
     document.querySelectorAll(".btn-ls").forEach((button) => {
-      button.addEventListener("click", function () {
+      button.addEventListener("click", function (this: HTMLElement) {
         const target = this.getAttribute("data-target");
-
+  
         // Ocultar todas las secciones
         document.querySelectorAll(".content-section").forEach((section) => {
           section.classList.add("hidden");
         });
-
+  
         // Mostrar la sección seleccionada
-        document.getElementById(target).classList.remove("hidden");
-
+        const element = target ? document.getElementById(target) : null;
+        if (element) {
+          element.classList.remove("hidden");
+        }
+  
         // Eliminar la clase active de todos los botones
         document.querySelectorAll(".btn-ls").forEach((btn) => {
           btn.classList.remove("active");
         });
-
+  
         // Añadir la clase active al botón clicado
         this.classList.add("active");
       });
