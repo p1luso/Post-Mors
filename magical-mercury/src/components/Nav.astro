@@ -67,6 +67,22 @@ console.log("Javascript");
         margin: 0;
     }
 
+    .navbar-hip,
+.dropdown-link {
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s, padding 0.3s; /* Transiciones suaves */
+    border-radius: 1vh;
+}
+
+.navbar-hip.active,
+.navbar-hip:hover,
+.dropdown-link.active,
+.dropdown-link:hover {
+    color: black;
+    background: #fff;
+    border-radius: 1vh; /* Para asegurar que el borde no desaparezca */
+    padding: 1.5vh 2vw; /* Ajusta según sea necesario */
+}
+
     .navbar-list {
         margin: 0 2vw;
         font-size: 2vh;
