@@ -5,134 +5,18 @@ import Nav from "../components/Nav.astro";
 
 <Layout title="Post Mors">
   <main>
+    <div class="header">
+      <img class="logo" src="/logo.png" />
       <div id="nav">
-        <Nav />
+          <Nav />
       </div>
+  </div>
       <div class="grid-container">
-        <div class="logo-text-container">
-          <div class="logo-container">
-            <img src="/logo.png" alt="Logo" class="logo" />
-          </div>
-          <div class="subtitle-container">
-            <p class="subtitle-text">
-              Espacio de innovación y diseño. Argentino. <br />
-              <span>Cero prejuicios.</span>
-            </p>
-          </div>
-        </div>
+       
         <div class="left-side">
           <div class="leftSide-container">
-            <div class="ls-buttons">
-              <button class="btn btn-ls" data-target="manifesto"
-                >8-MANIFESTO</button
-              >
-              <button class="btn btn-ls" data-target="about"
-                >¿Quiénes somos?</button
-              >
-              <a class="btn btn-ls" href="https://www.instagram.com/post___mors/" target="_blank"
-                >Instagram</a
-              >
-              <a class="btn btn-ls" href="https://www.linkedin.com/company/post-mors" target="_blank"
-                >LinkedIn</a
-              >
-              <a class="btn btn-ls" href="https://www.behance.net/90degreesar" target="_blank"
-              >Behance</a
-            >              <button class="btn btn-ls" data-target="contact" id="contact-btn"
-                >Contacto</button
-              >
-            </div>
-
-            <!-- Secciones -->
-            <div id="manifesto" class="content-section hidden">
-              <div class="manifesto-content-box">
-                <h3 class="manifesto-content-h3">8-MANIFESTO</h3>
-                <p class="manifesto-content-text">
-                  <span class="manifesto-text"
-                    >Nuestros 8 objetivos y pensamientos a la hora de diseñar</span
-                  >:
-                  <ul class="manifesto-ul">
-                    <li class="manifesto-lists">DISEÑAR SIN PREJUICIOS</li>
-                    <li class="manifesto-lists">VOLAR</li>
-                    <li class="manifesto-lists">CONVIVIR CON EL USUARIO</li>
-                    <li class="manifesto-lists">SER MEJOR TODOS LOS DÍAS</li>
-                    <li class="manifesto-lists">UN NUEVO MUNDO</li>
-                    <li class="manifesto-lists">NO MORIR CON TU IDEA</li>
-                    <li class="manifesto-lists">DISFRUTA EL CAMINO</li>
-                    <li class="manifesto-lists">
-                      EL ORDEN NO ES MALO SI TODOS LO ENTIENDEN
-                    </li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-            <div id="about" class="content-section hidden">
-              <div class="about-content-box">
-                <h3 class="about-content-h3">¿Quiénes somos?</h3>
-                <p class="about-content-text">
-                  Somos <span class="about-span">Ramiro y Agustín.</span> Dos diseñadores
-                  amigos que se conocieron estudiando la carrera de Diseño Gráfico.
-                  Post Mors es nuestro
-                  <span class="about-span"
-                    >espacio de creatividad e innovación</span
-                  > en la cual nos divertimos y experimentamos con clientes.
-                </p>
-              </div>
-            </div>
-            <div id="instagram" class="content-section hidden">
-              <p>Contenido de Instagram.</p>
-            </div>
-            <div id="linkedin" class="content-section hidden">
-              <p>Contenido de LinkedIn.</p>
-            </div>
-            <div id="behance" class="content-section hidden">
-              <p>Contenido de Behance.</p>
-            </div>
-            <div id="contact" class="content-section hidden">
-              <div class="form-container" id="contact-form-container">
-                <p class="form-text">¡Contáctate con nosotros!</p>
-                <div class="form-group">
-                  <form class="landing-form" id="landing-form">
-                    <div class="up-form-group">
-                      <input
-                        class="up-text"
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Nombre"
-                        required
-                      />
-                      <input
-                        class="up-text"
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                      />
-                    </div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Contanos que necesitas..."
-                      required></textarea>
-                    <div class="loading-button">
-                      <input
-                        type="submit"
-                        value="Enviar Mensaje"
-                        class="btn"
-                        id="submit-button"
-                      />
-                      <div class="loader hidden" id="loader"></div>
-                    </div>
-                  </form>
-                  <div id="confirmation-promptt" class="hidden">
-                    <div id="confirmation-prompt">
-                    <p>¡Tu solicitud fue enviada con éxito! Obtendrás una respuesta en tu casilla de mail.</p>
-                    <button class="close-btn" onclick="closePrompt()">X</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="indImgs">
+              <div class="indBackground"></div>
             </div>
           </div>
         </div>
@@ -208,11 +92,11 @@ import Nav from "../components/Nav.astro";
   body,
   html,
   main {
-    min-height: 100%;
+    min-height: 90%;
     margin: 0;
     padding: 0;
     background: linear-gradient(#262525, #48560f); /* Fondo degradado */
-    background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
+    background-size: 100% 150%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
     animation: gradient 5s ease infinite; /* Aplica la animación */
     display: flex;
     justify-content: center;
@@ -222,6 +106,22 @@ import Nav from "../components/Nav.astro";
   .hidden {
     display: none;
   }
+
+  .logo {
+        position: absolute;
+       width: 5.8%;
+       height: auto;
+       left: 0px;
+   }
+
+   .header {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    }
 
   .btn-ls.active {
     background-color: white;
@@ -234,7 +134,7 @@ import Nav from "../components/Nav.astro";
       background-position: 0% 0%;
     }
     50% {
-      background-position: 0% 100%;
+      background-position: 0% 80%;
     }
     100% {
       background-position: 0% 0%;
@@ -244,13 +144,8 @@ import Nav from "../components/Nav.astro";
   main {
     height: 100%;
     margin: 0;
-    padding: 0 5%;
     position: relative;
     align-items: center;
-  }
-
-  .logo {
-    width: 50vh; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
   }
 
   #nav {
@@ -263,44 +158,56 @@ import Nav from "../components/Nav.astro";
 
   .grid-container {
     display: grid;
-    grid-template-rows: auto 1fr; /* Fila para el logo, otra para los lados */
-    gap: -5%; /* Espacio entre las filas */
     grid-template-areas:
-      "logo-container right-side" /* Logo y right-side en la misma fila */
+      "indImgs right-side" /* Logo y right-side en la misma fila */
       "left-side right-side"; /* Left-side en la fila siguiente, right-side en ambas filas */
-    margin: 5% 5% 4% 5%; /* Centrar el contenedor horizontalmente */
+    margin: 0% 16% 0% 5%; /* Centrar el contenedor horizontalmente */
     max-width: 100%;
     justify-content: center;
     align-items: center;
     position: relative; /* Necesario para posicionar el logo absolutamente */
   }
 
-  .logo-container {
-    grid-area: logo-container; /* Asigna el área del logo */
-    display: flex;
-    width: fit-content;
-    align-items: center; /* Alinea verticalmente */
-    margin-bottom: -2%;
-  }
-
   .right-side {
     grid-area: right-side; /* Define el área del lado derecho */
-    margin-top: -10%; /* Elimina el margen superior */
     display: flex;
     flex-direction: column; /* Organiza el contenido en columnas si es necesario */
   }
 
   .leftSide-container
   {
-    width:90%;
+    width:100%;
   }
+
+  .left-side {
+  display: flex;
+  justify-content: center; /* Asegura que el contenido esté alineado a la izquierda */
+  align-items: center; /* Opcional: alinea verticalmente el contenido */
+}
+
+.indImgs
+{
+  max-width: fit-content;
+  max-height: fit-content;
+  border-radius: 29px;
+  border: 1px solid #fff;
+}
+
+.indBackground
+{
+  background-image: url(/indexImg.png);
+  width: 48em; /* Ajusta el ancho según tu imagen */
+  height: 43em;
+  border-radius: 29px;
+}
+
   .box-container {
     display: block;
     align-items: center;
     justify-self: center;
-    margin-left: 5%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
+    margin-left: 15%; /* Cambiar a % para que se ajuste al tamaño de la pantalla */
     overflow-y: auto; /* Hace que el contenido sea desplazable */
-    max-height: 100vh; /* Resta 50px del 100vh */
+    max-height: 80vh; /* Resta 50px del 100vh */
     scrollbar-width: none; /* Oculta la barra de desplazamiento para Firefox */
     -ms-overflow-style: none; /* Oculta la barra de desplazamiento para Internet Explorer */
   }
@@ -312,7 +219,7 @@ import Nav from "../components/Nav.astro";
   .box {
     border-radius: 29px;
     border: 1px solid #fff;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     transition:
       background-color 0.3s ease,
       color 0.3s ease; /* Añade una transición suave */
@@ -705,7 +612,6 @@ import Nav from "../components/Nav.astro";
     html,
     main {
       min-height: 100%;
-      margin: 2% 0;
       padding: 0;
       background: linear-gradient(#262525, #48560f); /* Fondo degradado */
       background-size: 100% 200%; /* El tamaño del fondo es el doble de la altura para permitir la animación */
@@ -713,26 +619,42 @@ import Nav from "../components/Nav.astro";
       display: grid;
     }
 
+    .logo
+        {
+            position: relative;
+            width: 15vh;
+            height: auto;
+        }
+        .header
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+        }
+        #nav
+        {
+            position: absolute;
+            left: 25px;
+        }
+
     .leftSide-container
     {
       width:100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
     }
 
     .grid-container {
       grid-template-areas:
-        "logo-text-container"
+        "indImg"
         "right-side" /* Lado derecho arriba */
         "left-side"; /* Lado izquierdo abajo */
       margin: 5% 3%;
       min-height: fit-content;
-    }
-
-    .logo-text-container {
-      flex-direction: column;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px; /* Espacio entre el logo y el texto */
     }
 
     .loading-button {
@@ -746,7 +668,6 @@ import Nav from "../components/Nav.astro";
     .left-side {
       grid-row: 3; /* Asigna la fila 3 al lado izquierdo */
       margin-top: 10px;
-      margin-bottom: 5%;
     }
 
     .right-side {
@@ -797,59 +718,7 @@ import Nav from "../components/Nav.astro";
     margin-bottom: auto;
   }
 
-  .logo-container {
-    display: flex;
-    justify-content: center; /* Centra el logo horizontalmente */
-    margin-bottom:5%;
-    margin-top:5%;
-  }
 
-  .logo {
-    width: 80%; /* Ajusta el tamaño del logo */
-  }
-
-  .subtitle-text {
-    font-size: 2rem; /* Ajusta el tamaño de la fuente */
-  }
-
-  .form-group .up-text,
-  .form-group textarea {
-    font-size: 1rem; /* Ajusta el tamaño de la fuente */
-  }
-
-  .ls-buttons {
-    width: 100%;
-    text-align: center; /* Centra los botones */
-  }
-
-  .btn-ls {
-    font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
-  }
-
-  .form-container {
-    margin: 0; /* Ajusta los márgenes */
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
-  }
-
-  .form-text {
-    font-size: 1.9rem; /* Ajusta el tamaño de la fuente */
-  }
-
-  .form-group {
-    width: 100%;
-  }
-
-  .ls-buttons {
-    
-  }
-
-  .landing-form {
-    width: 100%; /* Ajusta el ancho del formulario */
-  }
-
-  .up-form-group {
-    flex-direction: column; /* Organiza los elementos en una sola columna */
-  }
   }
 </style>
 <script
@@ -956,5 +825,19 @@ import Nav from "../components/Nav.astro";
         this.classList.add("active");
       });
     });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const boxContainer = document.querySelector('.box-container');
+      const scrollSpeed = 0.2; // Ajusta este valor para cambiar la velocidad (más bajo = más lento)
+
+      // Escuchar el evento "wheel" en toda la página
+      document.addEventListener('wheel', (event) => {
+          if (boxContainer) {
+              // Ajustar el desplazamiento aplicando un multiplicador para suavizar el scroll
+              boxContainer.scrollTop += event.deltaY * scrollSpeed;
+          }
+      });
   });
 </script>
